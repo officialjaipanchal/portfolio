@@ -174,6 +174,10 @@ const techStack = {
     {
       Stack: "Operating Systems: MacOS, Windows, Linux",
       progressPercentage: "95%"
+    },
+    {
+      Stack: "GIT, Google Suite, Micosoft Suite, IntelliJ, Unity",
+      progressPercentage: "82%"
     }
 
   ],
