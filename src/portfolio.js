@@ -152,24 +152,12 @@ const techStack = {
       progressPercentage: "80%" //Insert relative proficiency in percentage
     },
     {
-      Stack: "Data Analytics", //Insert stack or technology you have experience in
-      progressPercentage: "78%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Web Development",
+      Stack: "Web Development, Database",
       progressPercentage: "90%"
     },
     {
-      Stack: "Frontend/Design",
-      progressPercentage: "70%"
-    },
-    {
-      Stack: "Machine Learning / Artificial Intelligence",
-      progressPercentage: "66%"
-    },
-    {
-      Stack: "Database",
-      progressPercentage: "86%"
+      Stack: "Machine Learning, Artificial Intelligence, Data Analytics",
+      progressPercentage: "76%"
     },
     {
       Stack: "Operating Systems: MacOS, Windows, Linux",
@@ -265,7 +253,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/android_malware.png"),
-      projectName: "MACHINE LEARNING BASED MALWARE EVALUATION FOR ANDROID",
+      projectName: "Machine Learning Based Malware Evaluation For Android",
       projectDesc: "This project evaluates diverse machine learning models like SVM, KNN, and Decision Trees, utilizing static APK features. Its goal is to distinguish malware from benign Android apps, offering crucial insights to combat security threats in the Android ecosystem.",
       footerLink: [
         {
