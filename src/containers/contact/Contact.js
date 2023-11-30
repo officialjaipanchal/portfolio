@@ -39,6 +39,7 @@ export default function Contact() {
                   </a>
                   <br />
                   <br />
+                  <br />
                 </>
               )}
               <a
@@ -47,6 +48,7 @@ export default function Contact() {
               >
                 {contactInfo.email_address}
               </a>
+              <br />
               <br />
               <br />
               <SocialMedia />
