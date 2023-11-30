@@ -23,7 +23,7 @@ const greeting = {
   username: "Jaykumar Suthar",
   title: "JayKumar",
   subTitle: emoji(
-    "Results-driven software developer with expertise in game and mobile app development, machine learning, and a passion for innovation. Proven track record in Android and iOS platforms. Seeking opportunities in a collaborative team environment"
+    "Experienced software developer specializing in game and mobile app development and machine learning, with a solid dedication to driving results through innovation. A proven track record of success in both Android and iOS platforms. I seek career opportunities in a dynamic and collaborative software engineering or development position."
   ),
   resumeLink:
     "https://drive.google.com/file/d/1OiN5QZxZtGxYO2OVCton0IYvsqFFIwXd/view?usp=drive_link", // Set to empty to hide the button
