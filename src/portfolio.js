@@ -177,17 +177,17 @@ const techStack = {
 const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
-    {
-      role: "Teaching Assistant",
-      company: "Arizona State University",
-      companylogo: require("./assets/images/ASU LOGO.png"),
-      date: "Dec 2023 - Working",
-      // desc: " ",
-      descBullets: [
-        "Supporting the professor in assignment creation, practical documentation.",
-        "Grading Student Submission",
-      ]
-    },
+    // {
+    //   role: "Teaching Assistant",
+    //   company: "Arizona State University",
+    //   companylogo: require("./assets/images/ASU LOGO.png"),
+    //   date: "Dec 2023 - Working",
+    //   // desc: " ",
+    //   descBullets: [
+    //     "Supporting the professor in assignment creation, practical documentation.",
+    //     "Grading Student Submission",
+    //   ]
+    // },
     {
       role: "Software Developer",
       company: "Srashtasoft",
