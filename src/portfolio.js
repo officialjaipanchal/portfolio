@@ -164,7 +164,7 @@ const techStack = {
       progressPercentage: "95%"
     },
     {
-      Stack: "GIT, Google Suite, Micosoft Suite, IntelliJ, Unity",
+      Stack: "AWS, GIT, Google Suite, Micosoft Suite, IntelliJ, Unity",
       progressPercentage: "82%"
     }
 
@@ -413,6 +413,20 @@ const achievementSection = {
 
   achievementsCards: [
     {
+      title: "Data Analytics on AWS",
+      subtitle:
+        "Simple visualizations in AWS QuickSight to do descriptive analytics (using S3, Cloudtrail, Athena), Descriptive data analytics in the cloud with typical data sets",
+      image: require("./assets/images/awsdataanalytics.png"),
+      imageAlt: "Certification Robotics & ML",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.coursera.org/account/accomplishments/certificate/8GS23K2UFCQD"
+        },
+       
+      ]
+    },
+    {
       title: "AZNext Introduction to Robotics in Microelectronics Manufacturing Training Program",
       subtitle:
         "Earned Competencies: Cleanroom Robotics, Design Attributes of Atmospheric Robots, Design of Vacuum Robots, Kinematics of Industrial Robots, Dynamics and Control of Industrial Robots, Test and Characterization,        ",
@@ -557,3 +571,9 @@ export {
   twitterDetails,
   isHireable
 };
+
+
+
+// Git Host all new data commands;
+git init
+git add .
