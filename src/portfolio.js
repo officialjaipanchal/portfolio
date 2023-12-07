@@ -413,11 +413,25 @@ const achievementSection = {
 
   achievementsCards: [
     {
+      title: "Play It Safe: Manage Security Risks",
+      subtitle:
+        "Identify the primary threats, risks, and vulnerabilities to business operations, Define commonly used Security Information and Event Management (SIEM) tools",
+      image: require("./assets/images/googlecyber.png"),
+      imageAlt: "Certification Google Cyber Security",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.coursera.org/account/accomplishments/certificate/YSKDYGRV84LW"
+        },
+       
+      ]
+    },
+    {
       title: "Foundations of Cybersecurity",
       subtitle:
         "Identify how security attacks impact business operations, Identify common tools used by cybersecurity analysts",
       image: require("./assets/images/googlecyber.png"),
-      imageAlt: "Certification Robotics & ML",
+      imageAlt: "Certification Google Cyber Security",
       footerLink: [
         {
           name: "Certification",
