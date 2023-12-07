@@ -575,5 +575,8 @@ export {
 
 
 // Git Host all new data commands;
-git init
-git add .
+// git init
+// git add .
+// git commit -m "Updated"
+// git push
+// npm run deploy
