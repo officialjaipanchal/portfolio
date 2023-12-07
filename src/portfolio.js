@@ -413,6 +413,20 @@ const achievementSection = {
 
   achievementsCards: [
     {
+      title: "Foundations of Cybersecurity",
+      subtitle:
+        "Identify how security attacks impact business operations, Identify common tools used by cybersecurity analysts",
+      image: require("./assets/images/googlecyber.png"),
+      imageAlt: "Certification Robotics & ML",
+      footerLink: [
+        {
+          name: "Certification",
+          url: "https://www.coursera.org/account/accomplishments/certificate/8GS23K2UFCQD"
+        },
+       
+      ]
+    },
+    {
       title: "Data Analytics on AWS",
       subtitle:
         "Simple visualizations in AWS QuickSight to do descriptive analytics (using S3, Cloudtrail, Athena), Descriptive data analytics in the cloud with typical data sets",
