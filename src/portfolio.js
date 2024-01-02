@@ -23,10 +23,10 @@ const greeting = {
   username: "Jaykumar Suthar",
   title: "JayKumar",
   subTitle: emoji(
-    "Experienced software developer specializing in game and mobile app development and machine learning, with a solid dedication to driving results through innovation. A proven track record of success in both Android and iOS platforms. I seek career opportunities in a dynamic and collaborative software engineering or development position."
+    "Experienced software developer specializing in game and mobile app development and proficient in machine learning. Committed to achieving impactful results through innovative approaches. Demonstrated success on both Android and iOS platforms. I'm actively seeking dynamic and collaborative opportunities in software engineering or development roles."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1OiN5QZxZtGxYO2OVCton0IYvsqFFIwXd/view?usp=drive_link", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1S7rJxrTXh-w3yExtgeyS3nrS5rnEwGmn/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
