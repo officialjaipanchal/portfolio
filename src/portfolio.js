@@ -23,10 +23,10 @@ const greeting = {
   username: "Jaykumar Suthar",
   title: "JayKumar",
   subTitle: emoji(
-    "Experienced software developer specializing in game and mobile app development and proficient in machine learning. Committed to achieving impactful results through innovative approaches. Demonstrated success on both Android and iOS platforms. I'm actively seeking dynamic and collaborative opportunities in software engineering or development roles."
+    "Experienced Software Developer specializing in game and mobile app development, proficient in machine learning. Successfully contributed to impactful experiences on Android and iOS platforms. Diversified skill set includes AWS, Laravel Framework, and e-commerce development. Passionate about integrating innovation with security. Actively seeking dynamic opportunities in software engineering to leverage my multifaceted skills and expertise."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1S7rJxrTXh-w3yExtgeyS3nrS5rnEwGmn/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1yHivwvVCK02jLuT0fHIYXemCLOZ9bT5G/view?usp=drive_link", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -36,8 +36,8 @@ const socialMediaLinks = {
   github: "https://github.com/officialjaipanchal",
   linkedin: "https://www.linkedin.com/in/whojaipanchal/",
   gmail: "whojaipanchal@gmail.com",
-  // gitlab: "https://gitlab.com/saadpasta",
-  // facebook: "https://www.facebook.com/saad.pasta7",
+  // gitlab: "https://gitlab.com/",
+  // facebook: "https://www.facebook.com/",
   medium: "https://medium.com/@whojaipanchal",
   stackoverflow: "https://stackoverflow.com/users/14535789/whojaipanchal",
   // Instagram, Twitter and Kaggle are also supported in the links!
@@ -51,13 +51,10 @@ const skillsSection = {
   title: "What I do",
   subTitle: "In the ever-evolving world of technology, those who embrace the art of learning programming languages are the architects of tomorrow.",
   skills: [
-    emoji(
-      "⚡ Craft exceptionally engaging user interfaces for web, mobile, and gaming applications that captivate and delight user"
-    ),
+    emoji("⚡ Craft exceptionally engaging user interfaces for web, mobile, and gaming applications that captivate and delight user"),
     emoji("⚡ Empower web application with unparalleled customizability, allowing you to tailor it precisely to the unique needs and preferences"),
-    emoji(
-      "⚡ Effortlessly incorporate third-party services like Firebase to elevate the functionality and capabilities of your projects."
-    )
+    emoji("⚡ Effortlessly incorporate third-party services like Firebase to elevate the functionality and capabilities of your projects."),
+    emoji("⚡ Enthusiastic about secure coding practices to ensure robust security measures in all development endeavors.")
   ],
 
   /* Make Sure to include correct Font Awesome Classname to view your icon
@@ -177,17 +174,19 @@ const techStack = {
 const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
-    // {
-    //   role: "Teaching Assistant",
-    //   company: "Arizona State University",
-    //   companylogo: require("./assets/images/ASU LOGO.png"),
-    //   date: "Dec 2023 - Working",
-    //   // desc: " ",
-    //   descBullets: [
-    //     "Supporting the professor in assignment creation, practical documentation.",
-    //     "Grading Student Submission",
-    //   ]
-    // },
+    {
+      role: "Teaching Assistant",
+      company: "Arizona State University",
+      companylogo: require("./assets/images/ASU LOGO.png"),
+      date: "Jan 2024 - Working",
+      // desc: " ",
+      descBullets: [
+        "In my role, I handle assignments and labs, making sure everything runs smoothly",
+        "This includes checking assignment deadlines, guiding students, and grading their work",
+        "I enjoy the challenge of keeping things organized while creating a positive learning experience",
+        "My goal is to contribute to the success and growth of both students and the educational program.",
+      ]
+    },
     {
       role: "Software Developer",
       company: "Srashtasoft",
@@ -195,9 +194,10 @@ const workExperiences = {
       date: "July 2022 – June 2023",
       // desc: " ",
       descBullets: [
-        "Developed Android and iOS games with Unity, resulting in positive user reviews.",
-        "Created a mobile application using Flutter, enhancing user engagement and satisfaction.",
-        "Collaborated on Python-based machine learning projects, improving data analysis and prediction accuracy.",
+        "Developed Android and iOS games with Unity, resulting in positive user reviews",
+        "Designed and implemented a mobile application with Flutter, significantly enhancing user engagement and satisfaction",
+        "Collaborated on Python-based machine learning projects, leading to improvements in data analysis and prediction accuracy.",
+        
       ]
     },
     {
@@ -208,7 +208,7 @@ const workExperiences = {
       // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       descBullets: [
         "Assisted in teaching technical labs on web technology and IT peripheral tools to improve students' understanding and skills.",
-        "Facilitated a conducive learning environment, contributing to enhanced comprehension and performance among B.Tech 1st-year students.",
+        "Created a conducive learning environment to enhance the learning experience for students.",
       ]
     },
     {
@@ -218,9 +218,9 @@ const workExperiences = {
       date: "January 2020 – April 2020",
       // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       descBullets: [
-        "Developed a Cleaning Service Website with full functionality utilizing PHP and the Laravel Framework.",
-        "Designed and implemented three essential modules: Admin, Client, and Worker.",
-        "The website offers seamless interactions and efficient management for administrators, clients, and workers, enhancing the overall user experience.",
+        "Designed and developed a fully functional Cleaning Service Website using PHP and the Laravel Framework",
+        "Crafted three essential modules - Admin, Client, and Worker - to facilitate seamless interactions and efficient management",
+        "The website offers enhanced user experiences for administrators, clients, and workers, ensuring smooth interactions and streamlined processes.",
       ]
     }
   ]
@@ -242,14 +242,14 @@ const bigProjects = {
   projects: [
     {
       image: require("./assets/images/aws.png"),
-      projectName: "Secure Static Web Application",
-      projectDesc: "Secured website using AWS suite: EC2, Load Balancer, CloudWatch, KMS, IAM, and VPN for robust protection",
-      footerLink: [
-        {
-          name: "Website",
-          url: "http://ift520project.edu.s3-website-us-east-1.amazonaws.com/"
-        }, 
-      ]
+      projectName: "Designing and implementing a secure web application architecture using AWS",
+      projectDesc: "Integrating AWS security services: encryption, access control, monitoring, and threat detection, Streamlining administration for data integrity, confidentiality, and availability, Leveraging AWS's cloud security for simplified compliance, Minimizing manual efforts, maximizing protection",
+      // footerLink: [
+      //   {
+      //     name: "Website",
+      //     url: "http://ift520project.edu.s3-website-us-east-1.amazonaws.com/"
+      //   }, 
+      // ]
     },
     {
       image: require("./assets/images/android_malware.png"),
@@ -468,19 +468,19 @@ const achievementSection = {
        
       ]
     },
-    {
-      title: "AWS Certified Security-Specialty (2022)",
-      subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-      image: require("./assets/images/cybrary_logo.jpeg"),
-      imageAlt: "AWS Certification",
-      footerLink: [
-        {
-          name: "Cybrary",
-          url: "https://app.cybrary.it/courses/api/certificate/CC-748a7bb7-929a-423a-b8e3-8b94a3b20e3a/view"
-        }
-      ]
-    },
+    // {
+    //   title: "AWS Certified Security-Specialty (2022)",
+    //   subtitle:
+    //     "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
+    //   image: require("./assets/images/cybrary_logo.jpeg"),
+    //   imageAlt: "AWS Certification",
+    //   footerLink: [
+    //     {
+    //       name: "Cybrary",
+    //       url: "https://app.cybrary.it/courses/api/certificate/CC-748a7bb7-929a-423a-b8e3-8b94a3b20e3a/view"
+    //     }
+    //   ]
+    // },
     {
       title: "Fundamentals of Digital Marketing",
       subtitle: "Completed Certifcation from Google for Digital Marking, Credential Id: 3ME 7S7 CXJ",
@@ -521,13 +521,13 @@ const blogSection = {
       url: "https://dotbatcode.blogspot.com/",
       title: "Bat Files",
       description:
-        "In this blog, I discuss BAT code—an executable script in Windows that stores commands to be executed sequentially"
+        "In this blog, I talk about BAT code, which is a kind of script for Windows. It's like a set of instructions that the computer follows one after another. I'll explain how to use this code and its practical applications in Windows."
     },
     {
       url: "https://alltoolhere.blogspot.com/",
       title: "All Tool Here",
       description:
-        "In 2018, I created this blog out of necessity as I encountered difficulties finding software easily on the internet. To address this, I uploaded software to links and shared them through this blog."
+        "In 2018, I started this blog out of necessity when I faced challenges finding software online easily. To solve the problem, I uploaded software and shared the links through this blog."
     }
   ],
   display: true // Set false to hide this section, defaults to true
@@ -578,7 +578,7 @@ const twitterDetails = {
   display: false // Set true to display this section, defaults to false
 };
 
-const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
+const isHireable = true; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
 
 export {
   illustration,
