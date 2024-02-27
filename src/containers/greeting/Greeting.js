@@ -26,7 +26,7 @@ export default function Greeting() {
               >
                 {" "}
                 {greeting.title}{" "}
-                <span className="wave-emoji">{emoji("👋")}</span>
+                {/* <span className="wave-emoji">{emoji("👋")}</span> Enoji Commented */}
               </h1>
               <p
                 className={
@@ -35,7 +35,11 @@ export default function Greeting() {
                     : "greeting-text-p subTitle"
                 }
               >
-                {greeting.subTitle}
+                {/* {greeting.subTitle} */}
+                <div id="subtitle" style={{ textAlign: 'justify' }}>
+                          {greeting.subTitle}
+                        </div>
+                
               </p>
               <SocialMedia />
               <div className="button-greeting-div">

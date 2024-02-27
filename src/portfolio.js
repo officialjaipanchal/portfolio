@@ -19,16 +19,25 @@ const illustration = {
   animated: true // Set to false to use static SVG
 };
 
+// const greeting = {
+//   username: "Jaykumar Suthar",
+//   title: "Jay",
+//   subTitle: emoji(
+//     "Experienced Software Developer specializing in game and mobile app development, proficient in machine learning. Successfully contributed to impactful experiences on Android and iOS platforms. Diversified skill set includes AWS, Laravel Framework, and e-commerce development. Passionate about integrating innovation with security. Actively seeking dynamic opportunities in software engineering to leverage my multifaceted skills and expertise."
+//   ),
+//   resumeLink:
+//     "https://drive.google.com/file/d/1aZJgfgz6aQOLdrdTWyNsx5v2iLlYeipd/view?usp=drive_link", // Set to empty to hide the button
+//   displayGreeting: true // Set false to hide this section, defaults to true
+// };
+
 const greeting = {
   username: "Jaykumar Suthar",
-  title: "Jay",
-  subTitle: emoji(
-    "Experienced Software Developer specializing in game and mobile app development, proficient in machine learning. Successfully contributed to impactful experiences on Android and iOS platforms. Diversified skill set includes AWS, Laravel Framework, and e-commerce development. Passionate about integrating innovation with security. Actively seeking dynamic opportunities in software engineering to leverage my multifaceted skills and expertise."
-  ),
-  resumeLink:
-    "https://drive.google.com/file/d/1aZJgfgz6aQOLdrdTWyNsx5v2iLlYeipd/view?usp=drive_link", // Set to empty to hide the button
+  title: "Jaykumar",
+  subTitle: "Enthusiastic learner eagerly seeking a dynamic summer internship opportunity to grow and contribute in a professional environment.",
+  resumeLink: "https://drive.google.com/file/d/1Xdj8xx2vOqL9mt1n3OzC1_4l7YRyy1k8/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
+
 
 // Social Media Links
 
@@ -114,8 +123,8 @@ const educationInfo = {
       schoolName: "Arizona State University",
       logo: require("./assets/images/ASU LOGO.png"),
       subHeader: "Master of Science in Information Technology",
-      duration: "August 2023 - Expected May 2025",
-      desc: "Currently Pursuing Masters in Security Major.",
+      duration: "August 2023 -  May 2025",
+      desc: "Relevant Coursework: Adv Info System Development, Adv DB Management System, Cloud Architecture Info. (AWS), Security Compliance, Adv Info System Security",
       // descBullets: [
       //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
       // ]
@@ -125,7 +134,7 @@ const educationInfo = {
       logo: require("./assets/images/GNU_LOGO.png"),
       subHeader: "Master of Technology in Computer Engineering",
       duration: "September 2020 - June 2022",
-      desc: "I have wrriten a research paper on Machine Learning Based Malware Evaluation for Android, Got Second Ranked in the University",
+      desc: "Relevant Coursework: Wireless Networks, Digital Image Processing, Big Data Analytics, Distributed Computing, Natural Language Processing, Cloud Computing, Public Key Infrastructure, Data Mining and Data Warehousing",
       // descBullets: ["CGPA : 8.36/10"]
     },
     {
@@ -133,7 +142,7 @@ const educationInfo = {
       logo: require("./assets/images/GNU_LOGO.png"),
       subHeader: "Bachelor of Technology in Computer Engineering",
       duration: "September 2017 - June 2020",
-      desc: "I have wrriten a research paper on Machine Learning Based Malware Evaluation for Android, Got Second Ranked in the University",
+      desc: "Relevant Coursework: Database Management, Operating Systems, Application Development Tools, Design and Analysis of Algorithms, Computer Architecture, Web Technology, Information System Security, Machine Learning, Artificial Intelligence, Computer Networks, Object-Oriented Analysis and Design"
       // descBullets: ["CGPA : 7.52/10"]
     }
   ]
@@ -145,11 +154,7 @@ const techStack = {
   viewSkillBars: true, //Set it to true to show Proficiency Section
   experience: [
     {
-      Stack: "Game Development", //Insert stack or technology you have experience in
-      progressPercentage: "80%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Web Development, Database",
+      Stack: "Game Development, Web Development, Database",
       progressPercentage: "90%"
     },
     {
@@ -181,10 +186,9 @@ const workExperiences = {
       date: "Jan 2024 - Working",
       // desc: " ",
       descBullets: [
-        "In my role, I handle assignments and labs, making sure everything runs smoothly",
-        "This includes checking assignment deadlines, guiding students, and grading their work",
-        "I enjoy the challenge of keeping things organized while creating a positive learning experience",
-        "My goal is to contribute to the success and growth of both students and the educational program.",
+        "Manage assignments and labs, ensuring smooth operation",
+        "Check assignment deadlines, guide students, and grade their work",
+        "Contribute to the success and growth of students and the educational program",
       ]
     },
     {
@@ -195,8 +199,8 @@ const workExperiences = {
       // desc: " ",
       descBullets: [
         "Developed Android and iOS games with Unity, resulting in positive user reviews",
-        "Designed and implemented a mobile application with Flutter, significantly enhancing user engagement and satisfaction",
-        "Collaborated on Python-based machine learning projects, leading to improvements in data analysis and prediction accuracy.",
+        "Designed and implemented a mobile application with Flutter, enhancing user engagement and satisfaction",
+        "Collaborated on Python-based machine learning projects, improving data analysis and prediction accuracy",
         
       ]
     },
@@ -207,8 +211,8 @@ const workExperiences = {
       date: "October 2020 – January 2022",
       // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       descBullets: [
-        "Assisted in teaching technical labs on web technology and IT peripheral tools to improve students' understanding and skills.",
-        "Created a conducive learning environment to enhance the learning experience for students.",
+        "Instructed technical labs focused on web technology and IT peripheral tools",
+        "Created a conducive learning environment to enhance student learning experience",
       ]
     },
     {
@@ -219,8 +223,8 @@ const workExperiences = {
       // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       descBullets: [
         "Designed and developed a fully functional Cleaning Service Website using PHP and the Laravel Framework",
-        "Crafted three essential modules - Admin, Client, and Worker - to facilitate seamless interactions and efficient management",
-        "The website offers enhanced user experiences for administrators, clients, and workers, ensuring smooth interactions and streamlined processes.",
+        "Crafted three essential modules - Admin, Client, and Worker - for seamless interactions and efficient management",
+        "Improved user experiences for administrators, clients, and workers",
       ]
     }
   ]
@@ -258,7 +262,7 @@ const bigProjects = {
       footerLink: [
         {
           name: "Research Paper",
-          url: "https://drive.google.com/file/d/11qfqP6qBCc8urk1pP26YhTkL67ePnTgi/view?usp=sharing"
+          url: "https://drive.google.com/file/d/1f3blMrC1ca75mS3Mmh4ENm-WTmXwYuWA/view"
         }, 
       ]
     },
@@ -303,10 +307,10 @@ const bigProjects = {
           url: "https://apps.apple.com/us/app/2048-infinite/id6448166018"
         },
         // You can add extra buttons here.
-        {
-          name: "#Unity",
-          fontAwesomeClassname: "fab fa-unity"
-        }
+        // {
+        //   name: "#Unity",
+        //   fontAwesomeClassname: "fab fa-unity"
+        // }
       ]
       
     },
@@ -345,23 +349,6 @@ const bigProjects = {
       
     },
     {
-      image: require("./assets/images/mindshift.jpeg"),
-      projectName: "Mindshift Motors",
-      projectDesc: "Crafted an engaging brain puzzle game that puts players in control of two cars simultaneously, challenging their multitasking abilities as they skillfully maneuver the vehicles to avoid obstacles and prevent any collisions.",
-      footerLink: [
-        {
-          name: "Play Store",
-          url: "https://play.google.com/store/apps/details?id=com.apps.srashtasoft.mindshiftmotors"
-        },
-        {
-          name: "App Store",
-          url: "https://apps.apple.com/us/app/mindshift-motors/id6449936547"
-        }
-        // You can add extra buttons here.
-      ]
-      
-    },
-    {
       image: require("./assets/images/climbtop.webp"),
       projectName: "Climb Top",
       projectDesc: "Climb Top is an exhilarating adventure that will take you to new heights of excitement. Prepare to test your skills and reflexes as you conquer challenging obstacles and navigate through thrilling challenges that will push your limits.",
@@ -393,6 +380,32 @@ const bigProjects = {
         // You can add extra buttons here.
       ]
     },
+    {
+      image: require("./assets/images/jetpack.png"),
+      projectName: "Dog Adoption (Kotlin)",
+      projectDesc: "For the Puppy Adoption App project, I developed a simple mobile application featuring an overview screen displaying a list of puppies available for adoption. Each puppy had its own details screen, including images and information sourced from BC SPCA. Additionally, I implemented an 'Adopt' button on the details screen that directly linked to the dog's details page on BC SPCA's website.",
+      footerLink: [
+        {
+          name: "Dog Adoption",
+          url: "https://github.com/officialjaipanchal/DogAdoption"
+        },
+        
+        // You can add extra buttons here.
+      ]
+    },
+    {
+      image: require("./assets/images/image-processing.png"),
+      projectName: "Dog Adoption (Kotlin)",
+      projectDesc: "For the Digital Image Processing project, I implemented various arithmetic operations on images using OpenCV and matplotlib in Python. These operations included addition, subtraction, multiplication, bitwise AND, OR, XOR, and NOT. I loaded images, performed the operations, and displayed the results using matplotlib.",
+      footerLink: [
+        {
+          name: "Digital Image Processing",
+          url: "https://github.com/officialjaipanchal/Digital-Image-Processing"
+        },
+        
+        // You can add extra buttons here.
+      ]
+    },
     
   ],
   display: true // Set false to hide this section, defaults to true
@@ -407,25 +420,24 @@ const bigProjects = {
 // Include certificates, talks etc
 
 const achievementSection = {
-  title: emoji("Achievements And Certifications 🏆 "),
-  subtitle:
-    "Achievements, Certifications Some Cool Stuff that I have done !",
+  title: emoji("Achievements And Certifications "),
+  // subtitle:"Achievements, Certifications Some Cool Stuff that I have done !",
 
   achievementsCards: [
-    {
-      title: "Play It Safe: Manage Security Risks",
-      subtitle:
-        "Identify the primary threats, risks, and vulnerabilities to business operations, Define commonly used Security Information and Event Management (SIEM) tools",
-      image: require("./assets/images/googlecyber.png"),
-      imageAlt: "Certification Google Cyber Security",
-      footerLink: [
-        {
-          name: "Certification",
-          url: "https://www.coursera.org/account/accomplishments/certificate/YSKDYGRV84LW"
-        },
+    // {
+    //   title: "Play It Safe: Manage Security Risks",
+    //   subtitle:
+    //     "Identify the primary threats, risks, and vulnerabilities to business operations, Define commonly used Security Information and Event Management (SIEM) tools",
+    //   image: require("./assets/images/googlecyber.png"),
+    //   imageAlt: "Certification Google Cyber Security",
+    //   footerLink: [
+    //     {
+    //       name: "Certification",
+    //       url: "https://www.coursera.org/account/accomplishments/certificate/YSKDYGRV84LW"
+    //     },
        
-      ]
-    },
+    //   ]
+    // },
     {
       title: "Foundations of Cybersecurity",
       subtitle:
@@ -483,8 +495,8 @@ const achievementSection = {
     // },
     {
       title: "Fundamentals of Digital Marketing",
-      subtitle: "Completed Certifcation from Google for Digital Marking, Credential Id: 3ME 7S7 CXJ",
-      image: require("./assets/images/google.jpeg"),
+      subtitle: "Completed Certifcation from Google for Digital Marking",
+      image: require("./assets/images/google-logo-9808.png"),
       imageAlt: "Google Certification",
       footerLink: [
         {
@@ -493,18 +505,18 @@ const achievementSection = {
         }
       ]
     },
-    {
-      title: "LinkedIn Learning Certificate of Completion",
-      subtitle: "Completed Certifcation from Linkedin for Introduction to Career Skills in Data Analytics",
-      image: require("./assets/images/linkedin.png"),
-      imageAlt: "Linkedin Certificate",
-      footerLink: [
-        {
-          name: "Data Analytics",
-          url: "https://www.linkedin.com/learning/certificates/1112518e484f6a640fb06693ea94e538aaa41a7cfc55100ec464c53998c11727"
-        }
-      ]
-    }
+    // {
+    //   title: "LinkedIn Learning Certificate of Completion",
+    //   subtitle: "Completed Certifcation from Linkedin for Introduction to Career Skills in Data Analytics",
+    //   image: require("./assets/images/linkedin.png"),
+    //   imageAlt: "Linkedin Certificate",
+    //   footerLink: [
+    //     {
+    //       name: "Data Analytics",
+    //       url: "https://www.linkedin.com/learning/certificates/1112518e484f6a640fb06693ea94e538aaa41a7cfc55100ec464c53998c11727"
+    //     }
+    //   ]
+    // }
   ],
   display: true // Set false to hide this section, defaults to true
 };
@@ -513,8 +525,7 @@ const achievementSection = {
 
 const blogSection = {
   title: "Blogs",
-  subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
+  // subtitle:  "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
   displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
   blogs: [
     {
@@ -523,6 +534,7 @@ const blogSection = {
       description:
         "In this blog, I talk about BAT code, which is a kind of script for Windows. It's like a set of instructions that the computer follows one after another. I'll explain how to use this code and its practical applications in Windows."
     },
+    
     {
       url: "https://alltoolhere.blogspot.com/",
       title: "All Tool Here",
