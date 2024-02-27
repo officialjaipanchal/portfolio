@@ -26,7 +26,7 @@ const greeting = {
     "Experienced Software Developer specializing in game and mobile app development, proficient in machine learning. Successfully contributed to impactful experiences on Android and iOS platforms. Diversified skill set includes AWS, Laravel Framework, and e-commerce development. Passionate about integrating innovation with security. Actively seeking dynamic opportunities in software engineering to leverage my multifaceted skills and expertise."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1Bmfki__KICXo0tU6pWpCX3BQgPcCTeFH/view?usp=drive_link", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1aZJgfgz6aQOLdrdTWyNsx5v2iLlYeipd/view?usp=drive_link", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
