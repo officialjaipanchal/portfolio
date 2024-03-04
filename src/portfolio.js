@@ -395,7 +395,7 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/image-processing.png"),
-      projectName: "Dog Adoption (Kotlin)",
+      projectName: "Digital Image Processing",
       projectDesc: "For the Digital Image Processing project, I implemented various arithmetic operations on images using OpenCV and matplotlib in Python. These operations included addition, subtraction, multiplication, bitwise AND, OR, XOR, and NOT. I loaded images, performed the operations, and displayed the results using matplotlib.",
       footerLink: [
         {
@@ -621,4 +621,9 @@ export {
 // git push
 // npm run deploy
 
-// Jerry - Link GIT
+// Jerry - 
+// Updates 02/27/24
+
+// Resume link
+// Paper link
+// added projects
