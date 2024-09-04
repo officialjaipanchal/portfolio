@@ -33,7 +33,7 @@ const illustration = {
 const greeting = {
   username: "Jaykumar Suthar",
   title: "Jaykumar",
-  subTitle: "Enthusiastic learner eagerly seeking a dynamic summer internship opportunity to grow and contribute in a professional environment.",
+  subTitle: "Driven and enthusiastic recent graduate seeking an exciting opportunity to contribute and grow within a dynamic professional environment. Eager to apply academic knowledge and skills in a real-world setting while continuing to learn and develop professionally.",
   resumeLink: "https://drive.google.com/file/d/1iV_pH_a9MoBdNqNMZjcmPUhlO3YzxUYf/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
@@ -623,6 +623,7 @@ export {
 
 // Jerry - 
 // Updates 02/27/24
+// Updates 09/04/24
 
 // Resume link
 // Paper link
