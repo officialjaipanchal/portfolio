@@ -33,8 +33,8 @@ const illustration = {
 const greeting = {
   username: "Jaykumar Suthar",
   title: "Jaykumar",
-  subTitle: "Driven and enthusiastic recent graduate seeking an exciting opportunity to contribute and grow within a dynamic professional environment. Eager to apply academic knowledge and skills in a real-world setting while continuing to learn and develop professionally.",
-  resumeLink: "https://drive.google.com/file/d/1iV_pH_a9MoBdNqNMZjcmPUhlO3YzxUYf/view?usp=sharing", // Set to empty to hide the button
+  subTitle: "Experienced in designing, developing, and maintaining scalable cross-platform and mobile applications. Passionate about writing clean, efficient, and secure code to enhance web and mobile application performance and user experience.",
+  resumeLink: "https://drive.google.com/file/d/17kI4bW3VyNEI4VmoBkAaKEXMEnGZyN-r/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
