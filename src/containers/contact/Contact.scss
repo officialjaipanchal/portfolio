@@ -17,8 +17,7 @@
   font-weight: 400;
 }
 
-.contact-detail,
-.contact-detail-email {
+.contact-detail {
   margin-top: 20px;
   font-size: 40px;
   font-weight: 400;
@@ -26,8 +25,28 @@
   text-decoration: none;
 }
 
+.contact-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  background-color: #2ecc71;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background-color: #27ae60;
+}
+
 .contact-detail:hover,
-.contact-detail-email:hover {
+.contact-button:hover {
   color: $textColor;
   text-shadow: 2px 1px 2px $contactDetailHoverTS;
   transition: all 0.3s;
@@ -76,9 +95,13 @@
     margin-top: 1.5rem;
   }
 
-  .contact-detail,
-  .contact-detail-email {
+  .contact-detail {
     font-size: 20px;
+  }
+
+  .contact-button {
+    font-size: 18px;
+    padding: 12px 25px;
   }
 
   .contact-image-div {

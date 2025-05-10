@@ -1,0 +1,201 @@
+.splash-animation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.laptop {
+  position: relative;
+  width: 300px;
+  height: 180px;
+  transform-style: preserve-3d;
+}
+
+.laptop-screen {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 160px;
+  background: #1a1a1a;
+  border: 8px solid #2c3e50;
+  border-radius: 8px 8px 0 0;
+  transform-origin: bottom;
+  animation: openLid 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.laptop-screen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+  z-index: 1;
+  animation: screenGlow 3s ease-in-out infinite;
+}
+
+.laptop-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0) 80%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+.code-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 120px;
+  color: #2ecc71;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  line-height: 1.2;
+  opacity: 0;
+  animation: codeTyping 3s ease-in-out forwards;
+  z-index: 2;
+  white-space: pre;
+  overflow: hidden;
+  text-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+.code-animation pre {
+  margin: 0;
+  padding: 0;
+  color: #2ecc71;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  line-height: 1.2;
+  animation: typing 3s steps(40) forwards;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 12px;
+  background: #2ecc71;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+.laptop-base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 15px;
+  background: #34495e;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.laptop-base::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 4px;
+  background: #2c3e50;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(44, 62, 80, 0.5);
+}
+
+.power-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: #e74c3c;
+  border-radius: 50%;
+  z-index: 4;
+  animation: powerPulse 2s ease-in-out infinite;
+}
+
+.keyboard-backlight {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background: rgba(46, 204, 113, 0.3);
+  border-radius: 2px;
+  z-index: 4;
+  animation: backlightPulse 2s ease-in-out infinite;
+}
+
+@keyframes openLid {
+  0% {
+    transform: translateX(-50%) rotateX(-90deg);
+  }
+  60% {
+    transform: translateX(-50%) rotateX(20deg);
+  }
+  100% {
+    transform: translateX(-50%) rotateX(0deg);
+  }
+}
+
+@keyframes codeTyping {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes screenGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes powerPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes backlightPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
+}

@@ -8,7 +8,11 @@ export default class DisplayLottie extends Component {
     const defaultOptions = {
       loop: true,
       autoplay: true,
-      animationData: animationData
+      animationData: animationData,
+      style: {
+        width: "100%",
+        height: "100%"
+      }
     };
 
     return (
@@ -16,8 +20,8 @@ export default class DisplayLottie extends Component {
         <Lottie
           animationData={defaultOptions.animationData}
           loop={defaultOptions.loop}
+          style={defaultOptions.style}
         />
-        
       </Suspense>
     );
   }

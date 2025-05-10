@@ -1,31 +1,5 @@
 @import "../../_globalColor";
 
-.meter {
-  height: 20px;
-  position: relative;
-  background: $progressBarBackground;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
-}
-.meter > span {
-  display: block;
-  height: 100%;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background-color: $progressBarSpanBG;
-  position: relative;
-  overflow: hidden;
-}
-.skill {
-  line-height: 3.5vw;
-}
-.skill-bars {
-  font-size: 28px;
-  width: 40%;
-}
 .skills-container {
   display: flex;
   width: 90%;
@@ -33,38 +7,122 @@
   margin: 0px auto;
   margin-top: 2rem;
 }
-.skills-container > * {
-  flex: 1;
-  margin-bottom: 30px;
+
+.skills-bar {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.skills-image > img {
-  margin-left: 80px;
-  max-width: 90%;
+
+.skills-heading {
+  font-size: 56px;
+  font-weight: 400;
+  color: $textColor;
+  margin-bottom: 4.5rem;
+  text-align: center;
+}
+
+.dark-mode .skills-heading {
+  color: $textColorDark;
+}
+
+.skill {
+  margin-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill p {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: $textColor;
+}
+
+.dark-mode .skill p {
+  color: $textColorDark;
+}
+
+.meter {
+  height: 12px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.dark-mode .meter {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, $buttonColor, lighten($buttonColor, 20%));
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out;
+}
+
+.skills-image {
+  width: 50%;
+  max-width: 400px;
+  height: auto;
+  margin-left: 2rem;
+}
+
+.skills-image img {
+  max-width: 100%;
   height: auto;
 }
 
-/* Media Query */
-
-@media (max-width: 1456px) {
-  .skills-bar {
-    line-height: 4rem;
+@media (max-width: 1024px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
   }
+  
   .skills-image {
-    display: none;
-    order: 2;
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem 0 0 0;
+  }
+  
+  .skills-heading {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 2.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .skills-container {
-    flex-direction: column;
+    width: 95%;
+    padding: 10px 5px;
+    margin-top: 1.5rem;
   }
-  .skills-bar {
-    line-height: 3rem;
-    margin: 20px;
+  
+  .skills-heading {
+    font-size: 32px;
+    margin-bottom: 2rem;
   }
+  
+  .skill {
+    margin-bottom: 25px;
+    gap: 8px;
+  }
+  
+  .skill p {
+    font-size: 16px;
+  }
+  
+  .meter {
+    height: 8px;
+  }
+  
   .skills-image {
-    display: none;
-    order: 2;
+    max-width: 250px;
   }
 }

@@ -43,10 +43,10 @@ export default function Contact() {
                 </>
               )}
               <a
-                className="contact-detail-email"
+                className="contact-button"
                 href={"mailto:" + contactInfo.email_address}
               >
-                {contactInfo.email_address}
+                Send me an email
               </a>
               <br />
               <br />

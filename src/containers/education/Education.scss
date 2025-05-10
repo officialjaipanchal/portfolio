@@ -1,6 +1,20 @@
+@import "../../_globalColor";
+
+.education-main-div {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1200px;
+}
+
 .education-heading {
   font-size: 56px;
   font-weight: 400;
+  color: $textColor;
+  margin-bottom: 6rem;
+}
+
+.dark-mode .education-heading {
+  color: $textColorDark;
 }
 
 .education-section {
