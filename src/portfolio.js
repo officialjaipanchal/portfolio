@@ -748,6 +748,7 @@ export {
 // git add .
 // git commit -m "Updated"
 // git push
+// npm run build
 // npm run deploy
 
 // Jerry -

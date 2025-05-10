@@ -1,5 +1,5 @@
 {
-  "homepage": "https://officialjaipanchal.github.io",
+  "homepage": "https://officialjaipanchal.github.io/portfolio",
   "name": "jaykumarsuthar",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +23,6 @@
     "tsutils": "^3.21.0",
     "typescript": "^2.9.2"
   },
-
   "scripts": {
     "predeploy": "npm run build",
     "start": "react-scripts start",
