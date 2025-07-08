@@ -25,7 +25,7 @@ const greeting = {
   subTitle:
     "Full-stack Software Engineer with expertise in AI/ML, cloud platforms (AWS & Azure), and mobile development. Proven track record in building scalable applications using React, Node.js, Python, and Unity. Passionate about creating innovative solutions that combine technical excellence with user-centric design.",
   resumeLink:
-    "https://drive.google.com/file/d/1TweDyKCZO-MfQdYeWyVhl9053l7FFjsr/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1YNvQxZtixrL5ohis61oA3eA46OUTwWH5/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
