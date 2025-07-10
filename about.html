@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaykumar Suthar - About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg-dots-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></canvas>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <section id="about" class="active-section">
+    <h2>About Me</h2>
+    
+    <div class="about-details">
+      <!-- Education Section -->
+      <div class="about-section">
+        <h3>Education</h3>
+        <div class="education-item">
+          <div class="degree">M.S. Information Technology</div>
+          <div class="school">Arizona State University</div>
+          <div class="gpa">GPA: 4.00</div>
+          <div class="expandable-section">
+            <div class="expandable-header" onclick="toggleSection('courses-ms')">
+              <span>Coursework</span>
+              <span class="expand-icon">+</span>
+            </div>
+            <div class="expandable-content" id="courses-ms">
+              <div class="course-list">
+                <div class="course-item">
+                  <span class="course-name">Principles of Computer & Information Technology Architecture</span>
+                  <span class="course-grade">A+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Advanced Information Systems Security</span>
+                  <span class="course-grade">A+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Information Systems Development</span>
+                  <span class="course-grade">A+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Advanced Database Management Systems</span>
+                  <span class="course-grade">A+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Security Compliance for IT</span>
+                  <span class="course-grade">A+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Cloud Architecture Information Technology</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Network Forensics for IT</span>
+                  <span class="course-grade">A+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Middleware Programming & Data Security for IT</span>
+                  <span class="course-grade">A+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Cloud Security and Operations for IT</span>
+                  <span class="course-grade">A+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Applied Project</span>
+                  <span class="course-grade">A+</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="education-item">
+          <div class="degree">M.Tech. Computer Engineering</div>
+          <div class="school">Ganpat University</div>
+          <div class="gpa">GPA: 3.55</div>
+          <div class="expandable-section">
+            <div class="expandable-header" onclick="toggleSection('courses-mtech')">
+              <span>Coursework</span>
+              <span class="expand-icon">+</span>
+            </div>
+            <div class="expandable-content" id="courses-mtech">
+              <div class="course-list">
+                <div class="course-item">
+                  <span class="course-name">Computational Intelligence</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Computer Algorithms</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Cryptography and Network Security</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Wireless Networks</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Distributed Computing</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Digital Image Processing</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Data Mining and Data Warehousing</span>
+                  <span class="course-grade">A+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Cloud Computing</span>
+                  <span class="course-grade">B+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Public Key Infrastructure</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Advanced Database Management System</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Big Data Analytics</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Natural Language Processing</span>
+                  <span class="course-grade">A</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="education-item">
+          <div class="degree">B.Tech. Computer Engineering</div>
+          <div class="school">Ganpat University</div>
+          <div class="gpa">GPA: 3.10</div>
+          <div class="expandable-section">
+            <div class="expandable-header" onclick="toggleSection('courses-btech')">
+              <span>Coursework</span>
+              <span class="expand-icon">+</span>
+            </div>
+            <div class="expandable-content" id="courses-btech">
+              <div class="course-list">
+                <div class="course-item">
+                  <span class="course-name">Object Oriented Analysis and Design</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Design and Analysis of Algorithms</span>
+                  <span class="course-grade">B+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Computer Architecture</span>
+                  <span class="course-grade">B+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Computer Networks</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Web Technology</span>
+                  <span class="course-grade">B+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Theory of Computation</span>
+                  <span class="course-grade">B</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Software Engineering</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Information System Security</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Mobile Application Development</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Cloud Computing</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Artificial Intelligence</span>
+                  <span class="course-grade">A+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Machine Learning</span>
+                  <span class="course-grade">B+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Big Data Analytics</span>
+                  <span class="course-grade">A</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Object Oriented Programming</span>
+                  <span class="course-grade">B</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Database Management System</span>
+                  <span class="course-grade">B+</span>
+                </div>
+                <div class="course-item">
+                  <span class="course-name">Data Structures</span>
+                  <span class="course-grade">A</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="about-section">
+        <h3>Experience</h3>
+        
+        <!-- Software Development Experience -->
+        <div class="experience-item clickable" onclick="showExperienceModal('Software Developer', 'SrashtaSoft', 'Jul 2022 - Jun 2023 · 1 yr', 'India · On-site', 'software-dev')">
+          <div class="experience-header">
+            <div class="job-title">Software Developer</div>
+            <div class="company">SrashtaSoft</div>
+            <div class="duration">Jul 2022 - Jun 2023 · 1 yr</div>
+            <div class="location">India · On-site</div>
+          </div>
+          <div class="click-hint">Click to view details</div>
+        </div>
+        
+        <!-- Internship Experience -->
+        <div class="experience-item clickable" onclick="showExperienceModal('Software Developer Internship', 'gostepon', 'Jan 2020 - Apr 2020 · 4 mos', 'Ahmedabad, Gujarat, India · On-site', 'internship')">
+          <div class="experience-header">
+            <div class="job-title">Software Developer Internship </div>
+            <div class="company">gostepon</div>
+            <div class="duration">Jan 2020 - Apr 2020 · 4 mos</div>
+            <div class="location">Ahmedabad, Gujarat, India · On-site</div>
+          </div>
+          <div class="click-hint">Click to view details</div>
+        </div>
+        
+        <!-- Other Experience -->
+        <div class="expandable-section">
+          <div class="expandable-header" onclick="toggleSection('other-experience')">
+            <span>Other Experience</span>
+            <span class="expand-icon">+</span>
+          </div>
+          <div class="expandable-content" id="other-experience">
+            <div class="experience-item clickable" onclick="showExperienceModal('Teaching Assistant / Grader', 'Arizona State University', 'Jan 2024 - May 2025 · 1 yr 5 mos', 'Arizona, United States · Hybrid', 'ta-asu')">
+              <div class="experience-header">
+                <div class="job-title">Teaching Assistant</div>
+                <div class="company">Arizona State University</div>
+                <div class="duration">Jan 2024 - May 2025 · 1 yr 5 mos</div>
+                <div class="location">Arizona, United States · Hybrid</div>
+              </div>
+              <div class="click-hint">Click to view details</div>
+            </div>
+            
+            <div class="experience-item clickable" onclick="showExperienceModal('Teaching Assistant', 'Ganpat University', 'Oct 2020 - Jan 2022 · 1 yr 4 mos', 'India · On-site', 'ta-ganpat')">
+              <div class="experience-header">
+                <div class="job-title">Teaching Assistant</div>
+                <div class="company">Ganpat University</div>
+                <div class="duration">Oct 2020 - Jan 2022 · 1 yr 4 mos</div>
+                <div class="location">India · On-site</div>
+              </div>
+              <div class="click-hint">Click to view details</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Certificates Section -->
+      <div class="about-section">
+        <h3>Certificates</h3>
+        <div class="certificates-grid">
+          <div class="certificate-item clickable" onclick="window.open('https://www.credly.com/badges/49aa27bf-a2fd-4721-abda-e663258d815b', '_blank')">
+            <div class="certificate-header">
+              <div class="certificate-title">AWS Academy Cloud Security Foundations</div>
+              <div class="certificate-issuer">Amazon Web Services (AWS)</div>
+              <div class="certificate-date">Issued Nov 2024</div>
+            </div>
+            <div class="certificate-skills">
+              <span class="skill-tag">Amazon Web Services (AWS)</span>
+              <span class="skill-tag">AWS Security</span>
+            </div>
+          </div>
+          
+          <div class="certificate-item clickable" onclick="window.open('https://www.credly.com/badges/f9dc08a0-d35b-4138-8a1e-0cfc3ae67e31/linked_in_profile', '_blank')">
+            <div class="certificate-header">
+              <div class="certificate-title">Python for Data Science</div>
+              <div class="certificate-issuer">IBM</div>
+              <div class="certificate-date">Issued May 2024</div>
+            </div>
+            <div class="certificate-skills">
+              <span class="skill-tag">Python</span>
+            </div>
+          </div>
+          
+          <div class="certificate-item clickable" onclick="window.open('https://www.credly.com/badges/e84d26ae-d5c3-4290-8d51-7644cde16b01/linked_in_profile', '_blank')">
+            <div class="certificate-header">
+              <div class="certificate-title">AWS Academy Cloud Architecting</div>
+              <div class="certificate-issuer">Amazon Web Services (AWS)</div>
+              <div class="certificate-date">Issued Apr 2024</div>
+            </div>
+            <div class="certificate-skills">
+              <span class="skill-tag">Amazon Web Services (AWS)</span>
+            </div>
+          </div>
+          
+          <div class="certificate-item clickable" onclick="window.open('https://www.coursera.org/account/accomplishments/certificate/8GS23K2UFCQD', '_blank')">
+            <div class="certificate-header">
+              <div class="certificate-title">Data Analytics on AWS</div>
+              <div class="certificate-issuer">Amazon Web Services (AWS)</div>
+              <div class="certificate-date">Issued Dec 2023</div>
+            </div>
+            <div class="certificate-skills">
+              <span class="skill-tag">Amazon Web Services (AWS)</span>
+              <span class="skill-tag">Cloud Trail</span>
+              <span class="skill-tag">Data Analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      
+      <!-- Blogs Section -->
+      <div class="about-section blogs-section">
+        <h3>Blogs</h3>
+        <div class="blogs-list">
+          <div class="blog-item clickable" onclick="window.open('https://dotbatcode.blogspot.com/', '_blank')">
+            <div class="blog-title">Bat Files</div>
+            <div class="blog-desc">In this blog, I talk about BAT code, which is a kind of script for Windows. It's like a set of instructions that the computer follows one after another. I'll explain how to use this code and its practical applications in Windows.</div>
+          </div>
+          <div class="blog-item clickable" onclick="window.open('https://alltoolhere.blogspot.com/', '_blank')">
+            <div class="blog-title">All Tool Here</div>
+            <div class="blog-desc">In 2018, I started this blog out of necessity when I faced challenges finding software online easily. To solve the problem, I uploaded software and shared the links through this blog.</div>
+          </div>
+          <div class="blog-item clickable" onclick="window.open('https://quizhelpsupport.blogspot.com/', '_blank')">
+            <div class="blog-title">Student Support</div>
+            <div class="blog-desc">A dedicated blog created to help students with their academic challenges. I share educational resources, study tips, and provide support to fellow learners who are navigating their educational journey. This platform reflects my commitment to helping others succeed in their academic pursuits.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Skills Section -->
+      <div class="about-section">
+        <h3>Technical Skills</h3>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Programming Languages</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Bash</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Web Technologies & Frameworks</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Express.js</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">TailwindCSS</span>
+              <span class="skill-tag">Bootstrap</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Backend & API Development</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">RESTful APIs</span>
+              <span class="skill-tag">JWT Auth</span>
+              <span class="skill-tag">MVC Pattern</span>
+              <span class="skill-tag">WebSockets</span>
+              <span class="skill-tag">Puppeteer</span>
+              <span class="skill-tag">Postman</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Databases</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">Firebase</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Cloud & DevOps</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS (EC2, S3, IAM)</span>
+              <span class="skill-tag">AWS (VPC, RDS, CloudWatch)</span>
+              <span class="skill-tag">Azure</span>
+              <span class="skill-tag">Firebase</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">GitHub Actions</span>
+              <span class="skill-tag">Vercel</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>AI, ML & Data Science</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">OpenAI API</span>
+              <span class="skill-tag">Gemini API</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">NLP</span>
+              <span class="skill-tag">Prompt Engineering</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Security & Tools</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">JWT</span>
+              <span class="skill-tag">OAuth2</span>
+              <span class="skill-tag">IP Logging</span>
+              <span class="skill-tag">RBAC</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">Swagger</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Developer Tools</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Shell Scripting</span>
+              <span class="skill-tag">Jira</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Experience Modal -->
+  <div id="experience-modal" class="modal hidden">
+    <div class="modal-content experience-modal">
+      <span class="modal-close" onclick="closeExperienceModal()">&times;</span>
+      <div class="modal-header">
+        <h3 id="modal-job-title"></h3>
+        <div class="modal-company" id="modal-company"></div>
+        <div class="modal-duration" id="modal-duration"></div>
+        <div class="modal-location" id="modal-location"></div>
+      </div>
+      <div class="modal-body" id="modal-description"></div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-detail-container {
+      max-width: 800px;
+      margin: 3em auto;
+      background: #181818;
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+      padding: 2.5em 2em 2em 2em;
+      color: #fff;
+      animation: fadeIn 0.7s;
+    }
+    .project-detail-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+      color: #7ecfff;
+    }
+    .project-detail-section {
+      margin-bottom: 2.5em;
+    }
+    .project-detail-section h3 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 1em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .project-detail-section p {
+      color: #e0e0e0;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 1.2em;
+      text-align: justify;
+      letter-spacing: 0.3px;
+      font-weight: 400;
+    }
+    .project-detail-section ul {
+      margin: 0 0 0 1.5em;
+      padding: 0;
+      color: #d0d0d0;
+    }
+    .project-detail-section li {
+      margin-bottom: 0.8em;
+      line-height: 1.7;
+      font-size: 1.02rem;
+      letter-spacing: 0.2px;
+    }
+    .project-detail-links a {
+      color: #7ecfff;
+      font-weight: 500;
+      margin-right: 1.5em;
+      text-decoration: none;
+      transition: color 0.18s;
+    }
+    .project-detail-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .project-detail-meta {
+      color: #aaa;
+      font-size: 1.05em;
+      margin-bottom: 1em;
+    }
+    .project-detail-badge {
+      display: inline-block;
+      background: #23272f;
+      color: #7ecfff;
+      border-radius: 6px;
+      padding: 0.2em 0.7em;
+      font-size: 0.98em;
+      margin-right: 0.7em;
+      margin-bottom: 0.3em;
+    }
+    @media (max-width: 700px) {
+      .project-detail-container {
+        padding: 1.5em 1em 1.2em 1em;
+        margin: 2em 1em;
+      }
+      .project-detail-title {
+        font-size: 1.4rem;
+      }
+      .project-detail-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8em;
+      }
+      .project-detail-section p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 1em;
+      }
+      .project-detail-section li {
+        font-size: 0.98rem;
+        line-height: 1.6;
+        margin-bottom: 0.6em;
+      }
+      .project-link-btn {
+        padding: 0.7em 1.3em;
+        font-size: 0.95em;
+        margin: 0.4em 0.3em 0.4em 0;
+      }
+    }
+    .project-link-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #7ecfff 0%, #3a8dde 100%);
+      color: #0a0a0a;
+      font-weight: 700;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 0.8em 1.6em;
+      margin: 0.5em 0.5em 0.5em 0;
+      font-size: 1.05em;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(126,207,255,0.15);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-link-btn:hover {
+      background: linear-gradient(135deg, #3a8dde 0%, #7ecfff 100%);
+      color: #ffffff;
+      box-shadow: 0 6px 20px rgba(126,207,255,0.25);
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .project-link-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(126,207,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="bg-dots-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></canvas>
+  <nav style="text-align:center; margin-top:2em;">
+    <a id="back-to-portfolio" href="projects.html" style="color:#7ecfff; font-size:1.1em; text-decoration:none;">&larr; Back to Portfolio</a>
+  </nav>
+  <div class="project-detail-container">
+    <div class="project-detail-title" id="project-title">Project Title</div>
+    <div class="project-detail-meta" id="project-meta"></div>
+    <div class="project-detail-section" id="project-about"></div>
+    <div class="project-detail-section" id="project-features"></div>
+    <div class="project-detail-section" id="project-stack"></div>
+    <div class="project-detail-section" id="project-install"></div>
+    <div class="project-detail-section" id="project-usage"></div>
+    <div class="project-detail-section" id="project-performance"></div>
+    <div class="project-detail-section" id="project-learned"></div>
+    <div class="project-detail-section project-detail-links" id="project-links"></div>
+  </div>
+  <script>
+    const projectData = {
+      "Dream Catcher": {
+  meta: `
+    <span class='project-detail-badge'>July 2025</span> 
+    <span class='project-detail-badge'>React, React Native, Node.js, Express.js, MongoDB, Expo</span>
+  `,
+  about: `
+    <b>Dream Catcher</b> is a comprehensive dream journaling platform that enables users to capture, organize, and analyze their dreams through multiple media formats including text, audio, and video recordings.<br><br>
+    Built as a full-stack application with a React website, React Native mobile app, and Node.js backend, Dream Catcher provides a seamless cross-platform experience for dream documentation and personal insights.<br><br>
+    <i>This project taught me full-stack development across multiple platforms, real-time media handling, secure authentication systems, and building intuitive user experiences for personal data management.</i>
+  `,
+  features: [
+    "Multi-format dream capture: text, audio recording, and video recording",
+    "Cross-platform experience with React website and React Native mobile app",
+    "Secure JWT authentication with bcrypt password hashing and password reset",
+    "Comprehensive analytics dashboard with dream statistics and mood tracking",
+    "Achievement system with progress tracking and milestone rewards",
+    "Calendar heatmap visualization for dream frequency patterns",
+    "Advanced filtering and search with tags, moods, and dream types",
+    "Auto-backup system with cloud storage integration",
+    "Real-time statistics and insights with Chart.js visualizations",
+    "Smart organization with favorites, categories, and search functionality"
+  ],
+  stack: `
+    <b>Frontend:</b> React.js, React Router, PrimeReact, Chart.js, React Calendar Heatmap<br>
+    <b>Mobile:</b> React Native, Expo, AsyncStorage, React Navigation, Expo AV/Camera<br>
+    <b>Backend:</b> Node.js, Express.js, MongoDB (Mongoose), JWT, bcrypt, Helmet<br>
+    <b>Security:</b> JWT Authentication, bcrypt password hashing, CORS, input validation<br>
+    <b>Utilities:</b> Moment.js, Morgan logging, Resend email service, Google Cloud Speech
+  `,
+  usage: `Perfect for dream researchers, psychology enthusiasts, and anyone wanting to track their subconscious patterns. Enables comprehensive dream analysis and personal growth through detailed documentation.`,
+  performance: `Optimized media handling with efficient file uploads, real-time recording capabilities, and responsive design across all devices. MongoDB aggregation for fast statistics and analytics.`,
+  learned: `Built a complete full-stack application spanning web and mobile platforms. Mastered cross-platform development, media handling, secure authentication, and data visualization. Learned to create intuitive user experiences for personal data management with comprehensive analytics.`,
+  links: {
+    github: "https://github.com/officialjaipanchal/Dream-Catcher"
+  }
+},
+      "ColorSense AI": {
+        meta: `
+          <span class='project-detail-badge'>May 2025</span> 
+          <span class='project-detail-badge'>React.js, Express.js, MongoDB, Gemini AI</span>
+        `,
+        about: `
+          <b>ColorSense AI</b> is an AI-powered color consultation platform that helps users explore, compare, and receive intelligent color recommendations in a beautiful, intuitive interface.<br><br>
+          Designed for interior designers, creatives, and color-curious users, this full-stack platform features real-time AI suggestions, visual comparison, and palette export functionality.<br><br>
+          <i>This project deepened my experience with building intelligent UIs and integrating real-world AI solutions. Open to feedback and ongoing improvements!</i>
+        `,
+        features: [
+          "Search colors by name, code, or category",
+          "Filter by undertones, room type, and mood",
+          "Compare multiple colors side by side",
+          "AI-powered suggestions using Google Gemini AI",
+          "Real-time chatbot for personalized guidance",
+          "Save and export custom color palettes"
+        ],
+        stack: `
+          <b>Built With:</b> React.js (TailwindCSS), Express.js, MongoDB, Google Gemini AI
+        `,
+        usage: `Web-based app with interactive UI and smart color design features`,
+        performance: `Optimized for responsive performance, still improving based on user feedback`,
+        learned: `Learned to design intelligent, AI-integrated UIs with a clean UX and scalable backend architecture`,
+        links: {
+          github: "https://github.com/officialjaipanchal/ColorSenseAI"
+        }
+      },
+      "LinkedIn Job Tracker": {
+  meta: `
+    <span class='project-detail-badge'>May 2025</span> 
+    <span class='project-detail-badge'>Node.js, Express.js, Puppeteer, MongoDB</span>
+  `,
+  about: `
+    <b>LinkedIn Job Tracker</b> is an automation-driven backend system that scrapes job listings from LinkedIn, classifies them intelligently, and stores structured data in a MongoDB database for easy filtering and job tracking.<br><br>
+    This tool was built to simplify the job hunt for developers and career platforms by eliminating hours of manual browsing and organizing opportunities in one place.<br><br>
+    <i>I handled the full development — from scraping logic and data modeling to classification and match scoring. It’s ideal for job alert systems and career dashboards.</i>
+  `,
+  features: [
+    "Scrapes latest LinkedIn job listings using Puppeteer",
+    "Classifies jobs by type (Software Engineer, QA, Data Analyst, etc.)",
+    "Extracts title, company, location, and full job description",
+    "Calculates match scores based on keyword relevance",
+    "Avoids duplicates with MongoDB indexing",
+    "Tracks application statuses: applied / interview / offer"
+  ],
+  stack: `
+    <b>Built With:</b> Node.js, Express.js, Puppeteer, MongoDB, Mongoose
+  `,
+  usage: `Backend automation system to fetch, classify, and track LinkedIn job listings`,
+  performance: `Efficient, scalable scraping logic with support for job tracking and skill-based classification`,
+  learned: `Learned how to build intelligent scrapers, structure large-scale job data, and apply classification logic using basic NLP techniques`,
+  links: {
+    github: "https://github.com/officialjaipanchal/LinkedIn_JobTracker"
+  }
+},
+      "ComicSonic": {
+  meta: `
+    <span class='project-detail-badge'>Apr 2025</span> 
+    <span class='project-detail-badge'>Next.js, Python, Gemini API, Google Text-to-Speech</span>
+  `,
+  about: `
+    <b>ComicSonic</b> is an AI-powered platform that transforms Comic Book PDFs into immersive, natural-sounding audio narrations.<br><br>
+    Built during a fast-paced hackathon, our goal was to enhance accessibility for comic lovers — including visually impaired users — by converting visual stories into enjoyable audio experiences.<br><br>
+    I led the <b>frontend development</b> using Next.js, designing a smooth, upload-friendly interface while my teammates handled the Python backend and AI integrations.
+  `,
+  features: [
+    "Upload comic PDFs and convert them to audio",
+    "Natural-sounding narration via Google Text-to-Speech",
+    "AI-powered text parsing using Gemini API",
+    "Web-based platform with a clean Next.js interface",
+    "High text extraction accuracy (~95–98%)",
+    "Designed for accessibility and ease of use"
+  ],
+  stack: `
+    <b>Built With:</b> Next.js (frontend), Python (backend), Gemini API, Google Text-to-Speech API
+  `,
+  usage: `Hackathon project aimed at enhancing accessibility for comic readers by enabling audio narration of visual content`,
+  performance: `Fast and accurate text extraction with seamless user flow for uploads and playback`,
+  learned: `Gained experience designing accessible UIs and collaborating in a full-stack hackathon setting to solve real-world problems with AI`,
+  links: {
+    github: "https://github.com/officialjaipanchal/ComicSonic"
+  }
+},
+      "PennyShare": {
+  meta: `
+    <span class='project-detail-badge'>Jan 2025 - Apr 2025</span> 
+    <span class='project-detail-badge'>Node.js, Express.js, MongoDB, OpenAI GPT-3.5</span>
+  `,
+  about: `
+    <b>PennyShare</b> is an intelligent group expense management system that helps users track shared and individual expenses, interact with an AI-powered financial assistant, and gain personalized financial insights.<br><br>
+    Designed to simplify group settlements and financial awareness, PennyShare merges real-time expense tracking with the power of OpenAI's GPT-3.5 for smart query handling.<br><br>
+    <i>This project taught me to blend NLP with financial logic, ensuring accurate query responses, modular API design, and secure user management.</i>
+  `,
+  features: [
+    "Track individual and group expenses with detailed breakdowns",
+    "AI chatbot assistant powered by OpenAI GPT-3.5",
+    "Smart query handling like: 'How much did I spend last month?' or 'Who owes me?'",
+    "Secure user management with JWT authentication and role-based access",
+    "Modular REST API for users, expenses, groups, settlements, and chatbot queries",
+    "MongoDB data modeling for splits, group roles, audit trails, and transactions"
+  ],
+  stack: `
+    <b>Built With:</b> Node.js, Express.js, MongoDB (Mongoose), OpenAI Chat Completion API<br>
+    <b>Security:</b> JWT Auth, bcrypt, validation middleware<br>
+    <b>Utilities:</b> Moment.js, custom logging and error handling
+  `,
+  usage: `Ideal for roommates, trip planners, and group finance management. Enables natural conversations with financial assistants.`,
+  performance: `Efficient query resolution using MongoDB aggregation and AI prompt engineering`,
+  learned: `Built a secure, full-stack financial system combining REST APIs, NLP, and smart data modeling. Learned how to design AI-first applications with real-world use cases.`,
+  links: {
+    github: "https://github.com/officialjaipanchal/PennyShare"
+  }
+},  
+
+     "Student Attendance System": {
+  meta: `
+    <span class='project-detail-badge'>Jan 2025 - Feb 2025</span> 
+    <span class='project-detail-badge'>React.js, Node.js, Express.js, SQLite</span>
+  `,
+  about: `
+    <b>Student Attendance System with Proxy Prevention</b> is a secure, offline-first platform built to tackle proxy attendance issues in classrooms. It combines IP-based fraud detection, real-time logging, and user-friendly UI to ensure authentic and reliable attendance tracking.<br><br>
+    Designed for classrooms and exam environments, it functions seamlessly in local networks without requiring internet access.<br><br>
+    <i>This project strengthened my backend validation, IP tracking, and secure system design skills — all while optimizing for offline-first performance.</i>
+  `,
+  features: [
+    "Secure attendance submission with backend validation",
+    "IP-based fraud detection to catch and flag duplicate check-ins",
+    "Real-time event logging for audit trails and accountability",
+    "Intuitive and minimalist UI for both students and administrators",
+    "Works in local networks — no internet required (offline-first design)",
+    "CSV export functionality for attendance reports"
+  ],
+  stack: `
+    <b>Built With:</b> React.js (frontend), Node.js + Express.js (backend), SQLite (database)<br>
+    <b>Security:</b> IP logging, real-time submission validation, token-based protection
+  `,
+  usage: `Ideal for universities or classrooms that need secure, offline-compatible attendance tracking with anti-proxy measures.`,
+  performance: `Lightweight and fast on local networks, with minimal setup and strong reliability even without internet access`,
+  learned: `Learned to design a secure, performant, and offline-first full-stack system. Gained hands-on experience in local network compatibility, fraud prevention, and real-time logging.`,
+  links: {
+    github: "https://github.com/officialjaipanchal/Student-Attendance-System"
+  }
+},
+
+     "Location Tracker": {
+  meta: `
+    <span class='project-detail-badge'>Nov 2024 - Dec 2024</span> 
+    <span class='project-detail-badge'>Android, Java/Kotlin, Google Maps API, SQLite</span>
+  `,
+  about: `
+    <b>Location Tracker</b> is a real-time GPS-based Android application that captures, stores, and visualizes user travel history through heatmaps and interactive maps.<br><br>
+    The app records precise latitude and longitude data, stores it locally for offline use, and presents it in a map-based UI with custom markers and timestamped location history.<br><br>
+    <i>Built for travelers, delivery workers, or anyone interested in geospatial insights, this project sharpened my skills in Android development, map UIs, and GPS data handling.</i>
+  `,
+  features: [
+    "Real-time GPS tracking with high-accuracy updates",
+    "Heatmap visualization to identify hotspots and movement density",
+    "Location history with timestamped entries",
+    "Interactive map with zoom, pan, and navigation features",
+    "Custom markers for saving key points or destinations",
+    "Offline support with local SQLite storage"
+  ],
+  stack: `
+    <b>Built With:</b> Android (Java/Kotlin), Google Maps API, Location Services, SQLite (local DB)
+  `,
+  usage: `Ideal for travelers, delivery tracking, or personal route analysis. Offers both live tracking and historical review via heatmap.`,
+  performance: `Efficient location polling with minimal battery drain and offline access to all stored data`,
+  learned: `Gained experience in Android location services, map-based UI design, GPS data handling, and spatial visualization techniques`,
+  links: {
+    github: "https://github.com/officialjaipanchal/Location-Tracker"
+  }
+},
+"Library Management System": {
+  meta: `
+    <span class='project-detail-badge'>Sep 2024 - Oct 2024</span> 
+    <span class='project-detail-badge'>React.js, Node.js, Express.js, MongoDB</span>
+  `,
+  about: `
+    <b>Library Management System</b> is a full-stack web application built to streamline book inventory, user profiles, and borrowing operations in libraries.<br><br>
+    It features a RESTful API for backend operations, a responsive frontend UI, and scalable NoSQL data modeling for flexible record handling.<br><br>
+    <i>This project helped me master CRUD operations, modular API design, and user-friendly interfaces in a full-stack environment.</i>
+  `,
+  features: [
+    "Book inventory management with search and categorization",
+    "User profile management for students and admins",
+    "Borrowing and return tracking with due date handling",
+    "RESTful API for smooth frontend-backend communication",
+    "Dashboard views for active books, overdue, and lending stats"
+  ],
+  stack: `
+    <b>Built With:</b> React.js (frontend), Node.js + Express.js (backend), MongoDB (Mongoose)
+  `,
+  usage: `Used for academic or small library environments to digitize the lending process with minimal admin effort`,
+  performance: `Fast data flow between modules using REST APIs, scalable MongoDB schema for flexible user/book handling`,
+  learned: `Improved backend development with Express.js, UI logic with React, and schema design using MongoDB. Practiced API testing with Postman.`,
+  
+},
+
+     "Gaming Database in SQL": {
+  meta: `
+    <span class='project-detail-badge'>Feb 2024 - Mar 2024</span> 
+    <span class='project-detail-badge'>T-SQL, Azure SQL Edge, Triggers, UDFs, Stored Procedures</span>
+  `,
+  about: `
+    <b>Gaming Database in SQL</b> is a fully designed and implemented relational database system that simulates a gaming platform's backend — complete with player tracking, achievements, transactions, and game analytics.<br><br>
+    Built using T-SQL on Azure SQL Edge, this project emphasizes real-time auditing, relationship integrity, and powerful insights through stored procedures and views.<br><br>
+    <i>This hands-on project expanded my backend database skills, especially around data normalization, stored procedures, and trigger-based auditing.</i>
+  `,
+  features: [
+    "10+ normalized tables covering Players, Games, Reviews, Achievements, and more",
+    "Populated using INSERTs with realistic test data for simulation",
+    "Audit Trail via Triggers for INSERT, UPDATE, DELETE operations",
+    "Stored Procedures and UDFs for core operations like gameplay tracking",
+    "Views for analytics: Top Games, Player Network, Achievements",
+    "Cursors for dynamic metadata display"
+  ],
+  stack: `
+    <b>Built With:</b> Microsoft Azure SQL Edge, T-SQL (Views, Triggers, Cursors, Stored Procedures, UDFs)<br>
+    <b>Platform:</b> Ubuntu 18.04 (ARM64)
+  `,
+  usage: `Simulates real-world backend database systems for gaming platforms and data-intensive applications`,
+  performance: `Highly optimized relational design with support for advanced analytics and reporting queries`,
+  learned: `Deepened my knowledge of database relationships, real-time auditing, referential integrity, and backend logic with advanced SQL features`,
+  links: {
+    github: "https://github.com/officialjaipanchal/Gamming-Database"
+  }
+},
+    "Secure Web Application Architecture": {
+  meta: `
+    <span class='project-detail-badge'>Aug 2023 - Nov 2023</span> 
+    <span class='project-detail-badge'>AWS (EC2, VPC, IAM, KMS, ELB, CloudTrail)</span>
+  `,
+  about: `
+    <b>Secure Web Application Architecture</b> is a cloud-native infrastructure project where I designed and deployed a scalable, secure, and highly available web architecture on AWS.<br><br>
+    The goal was to integrate DevSecOps practices across every layer — from networking and IAM to data encryption, monitoring, and disaster recovery — aligned with modern security standards like NIST and GDPR.<br><br>
+    <i>This project advanced my knowledge of cloud security, infrastructure-as-code, and compliance-driven design for enterprise-ready apps.</i>
+  `,
+  features: [
+    "VPC setup with public/private subnets, NAT & Internet Gateway",
+    "IAM roles, MFA, least-privilege access, and audit logging",
+    "Encryption at rest using KMS and TLS in transit using ACM",
+    "Elastic Load Balancer for high availability and fault tolerance",
+    "Monitoring via CloudWatch and full API tracking with CloudTrail",
+    "Continuous security testing: vulnerability scans, threat modeling",
+    "Disaster recovery using RDS snapshots, S3 versioning, and Glacier"
+  ],
+  stack: `
+    <b>Built With:</b> AWS EC2, VPC, IAM, KMS, ELB, CloudTrail, CloudWatch, ACM, RDS, S3, Route53
+  `,
+  usage: `Designed as a secure blueprint for web app deployments with compliance and zero-trust principles in mind`,
+  performance: `Optimized for availability, threat detection, and secure data flow across services`,
+  learned: `Learned to build secure cloud environments using AWS services, enforced compliance standards, and managed incident response and monitoring`,
+  links: {
+    github: "https://github.com/officialjaipanchal/secure-web-application-architecture"
+  }
+},
+
+      "Game Development": {
+  meta: `
+    <span class='project-detail-badge'>Jan 2022 - Jan 2023</span> 
+    <span class='project-detail-badge'>Unity, Firebase, Google AdMob, Game Design</span>
+  `,
+  about: `
+    <b>Game Development @ SrashtaSoft</b> involved the successful design, development, and deployment of 6+ mobile games on the Google Play Store using the Unity engine.<br><br>
+    These games featured interactive mechanics, real-time updates via Firebase Remote Config, and revenue optimization through Google AdMob integration.<br><br>
+    <i>This experience solidified my foundation in full-cycle game development, user behavior analytics, and in-game monetization strategies.</i>
+  `,
+  features: [
+    "Designed and developed 6+ Unity-based mobile games",
+    "Integrated Firebase Remote Config for dynamic game updates",
+    "Leveraged Google AdMob for user-targeted ad monetization",
+    "Real-time tracking of user engagement and retention metrics",
+    "Created engaging UI/UX and interactive gameplay mechanics",
+    "Published games on Google Play Store reaching global users"
+  ],
+  stack: `
+    <b>Built With:</b> Unity, C#, Firebase Remote Config, Google AdMob, .NET Framework
+  `,
+  usage: `Available on Google Play Store with thousands of downloads across casual, educational, and arcade categories`,
+  performance: `Games delivered smooth performance across Android devices with runtime configurability and scalable monetization`,
+  learned: `Learned full-lifecycle game development from ideation to launch. Gained expertise in Unity scripting, player analytics, cross-device optimization, and monetization.`,
+  links: {
+    "2048 Infinite": "https://play.google.com/store/apps/details?id=com.apps.srashtasoft.infinite2048",
+    "Mindshift Motors": "https://play.google.com/store/apps/details?id=com.apps.srashtasoft.mindshiftmotors",
+    "Letter Tracing For Kids": "https://play.google.com/store/apps/details?id=com.apps.srashtasoft.lettertracingforkid",
+    "Candy Carnival": "https://play.google.com/store/apps/details?id=com.apps.srashtasoft.candycarnival",
+    "Bounce Fusion": "https://play.google.com/store/apps/details?id=com.apps.srashtasoft.bouncefusion",
+    "Climb Top": "https://play.google.com/store/apps/details?id=com.apps.srashtasoft.climbtop"
+  }
+},
+"Machine Learning Based Malware Evaluation": {
+  meta: `
+    <span class='project-detail-badge'>Jan 2021 - Jan 2022</span> 
+    <span class='project-detail-badge'>Machine Learning, Weka, SVM, KNN, Random Forest</span>
+  `,
+  about: `
+    <b>Malware Evaluation for Android</b> focused on analyzing a rich dataset to detect malicious applications using advanced machine learning techniques.<br><br>
+    The project began with feature selection to improve data quality, implemented with Weka, followed by training classifiers including Support Vector Machines (SVM), k-Nearest Neighbors (KNN), and Random Forest (RF).<br><br>
+    Optimized model performance through hyperparameter tuning using GRID, BAYES, and RANDOMIZED search techniques, with SVM + RANDOMIZED search delivering the best results.<br><br>
+    <i>This project deepened my understanding of feature engineering, classifier evaluation, and automated model optimization in practical cybersecurity contexts.</i>
+  `,
+  features: [
+    "Feature selection using Weka to enhance dataset quality",
+    "Applied multiple ML classifiers: SVM, KNN, Random Forest",
+    "Performed hyperparameter tuning with GRID, BAYES, and RANDOMIZED searches",
+    "Identified SVM with RANDOMIZED search as top-performing model",
+    "Improved malware detection accuracy through rigorous experimentation"
+  ],
+  stack: `
+    Weka, Python (for ML workflows), SVM, KNN, Random Forest, Hyperparameter Optimization
+  `,
+  usage: `Used to evaluate and classify Android apps as malicious or benign based on extracted features`,
+  performance: `Achieved high predictive accuracy with optimized SVM classifier outperforming untuned models`,
+  learned: `Mastered feature selection, diverse ML classifiers, and hyperparameter tuning techniques essential for practical cybersecurity applications`,
+  links: {
+    "Research Paper": "https://www.afjbs.com/uploads/paper/74212d780eb577090a992803045b43bf.pdf"
+  }
+},
+"Digital Image Processing": {
+  meta: `
+    <span class='project-detail-badge'>Mar 2021 - May 2021</span> 
+    <span class='project-detail-badge'>Python, OpenCV, Matplotlib, NumPy</span>
+  `,
+  about: `
+    <b>Digital Image Processing</b> is a collection of interactive experiments showcasing fundamental image arithmetic and bitwise operations using Python and OpenCV.<br><br>
+    The project demonstrates practical image manipulation techniques including addition, subtraction, multiplication, and bitwise operations like AND, OR, XOR, and NOT.<br><br>
+    <i>This helped me understand pixel-level image processing and visualization critical for computer vision applications.</i>
+  `,
+  features: [
+    "Image Addition with cv2.addWeighted for blending images",
+    "Image Subtraction to highlight structural differences",
+    "Pixel-wise Image Multiplication",
+    "Bitwise AND for pixel intersection",
+    "Bitwise OR for merging pixel data",
+    "Bitwise XOR to highlight differences",
+    "Bitwise NOT for pixel inversion"
+  ],
+  stack: `
+    <b>Built With:</b> Python, OpenCV, Matplotlib, NumPy
+  `,
+  usage: `Designed for experimenting and visualizing core image processing techniques with real-time outputs`,
+  performance: `Efficient pixel-level operations with immediate visualization of results`,
+  learned: `Gained foundational skills in image matrix manipulation, Boolean logic on images, and data visualization techniques`,
+  links: {
+    github: "https://github.com/officialjaipanchal/Digital-Image-Processing"
+  }
+},
+"Dog Adoption App": {
+  meta: `
+    <span class='project-detail-badge'>Feb 2021</span> 
+    <span class='project-detail-badge'>Kotlin, Jetpack Compose, Android Architecture Components</span>
+  `,
+  about: `
+    <b>Dog Adoption App</b> is a beautifully designed Android app showcasing the power and flexibility of Jetpack Compose for modern UI development.<br><br>
+    Built as part of the Android Dev Challenge, it offers a smooth, responsive experience for browsing and adopting adorable puppies.<br><br>
+    <i>This project deepened my skills in declarative UI design and modern Android app architecture.</i>
+  `,
+  features: [
+    "Custom UI built with Jetpack Compose",
+    "Smooth and intuitive navigation flows",
+    "Modern Android Architecture with testable components",
+    "Material Design 3 components for sleek UI"
+  ],
+  stack: `
+    <b>Built With:</b> Kotlin, Jetpack Compose, Android Architecture Components, Material Design 3
+  `,
+  usage: `Designed for responsive, scalable mobile user experiences focused on adoption browsing`,
+  performance: `Lightweight, fast UI rendering using declarative Android framework`,
+  learned: `Gained hands-on experience with Jetpack Compose and modern Android development best practices`,
+  links: {
+    github: "https://github.com/officialjaipanchal/DogAdoption"
+  }
+},
+"E-commerce Website": {
+  meta: `
+    <span class='project-detail-badge'>Jun 2020 - Jul 2020</span> 
+    <span class='project-detail-badge'>Laravel, PHP, PHPMyAdmin, MySQL</span>
+  `,
+  about: `
+    <b>E-commerce Website</b> built using Laravel offers a comprehensive online shopping experience with robust admin management.<br><br>
+    Users can browse products in a visually appealing grid, filter by categories, add favorites, and place orders seamlessly.<br><br>
+    The admin panel manages delivery charges, banners, user accounts, locations, and policies ensuring smooth platform operations.<br><br>
+    <i>This project enhanced my skills in full-stack PHP development and database management.</i>
+  `,
+  features: [
+    "Product browsing with filters by category and popularity",
+    "Add to favorites and shopping cart with checkout",
+    "Admin dashboard for managing orders, offers, and user access",
+    "Location and policy management for operational efficiency"
+  ],
+  stack: `
+    <b>Built With:</b> Laravel (PHP), PHPMyAdmin, MySQL
+  `,
+  usage: `Responsive web platform designed for user-friendly online shopping and backend administration`,
+  performance: `Optimized for quick load times and smooth user interaction across devices`,
+  learned: `Gained experience in PHP web development, relational database design, and admin panel implementation`,
+  links: {
+    github: "https://github.com/officialjaipanchal/E-commerce-Website"
+  }
+},
+"NE Cleaning": {
+  meta: `
+    <span class='project-detail-badge'>Jan 2020 - Apr 2020</span> 
+    <span class='project-detail-badge'>Laravel, PHP, MySQL</span>
+  `,
+  about: `
+    <b>NE Cleaning</b> is a multi-module web platform designed to streamline cleaning service requests, worker assignments, and administrative oversight.<br><br>
+    The system includes distinct roles for Users, Workers, and Admins to enable efficient task handling and service delivery.<br><br>
+    <i>This project strengthened my skills in building role-based web applications with secure and scalable backend architecture.</i>
+  `,
+  features: [
+    "User module for submitting cleaning service requests (e.g., Garden Cleaning, Car Cleaning)",
+    "Worker module that displays requests on a first-come, first-serve basis for acceptance and completion",
+    "Admin module offering full visibility and management of all service requests and workflow optimization",
+    "Built with Laravel for secure, maintainable web architecture and MySQL for reliable data storage"
+  ],
+  stack: `
+    <b>Built With:</b> Laravel (PHP), MySQL
+  `,
+  usage: `Designed to provide seamless interaction between users requesting services, workers fulfilling tasks, and admins managing operations`,
+  performance: `Robust backend ensuring secure and responsive request handling across all modules`,
+  learned: `Gained expertise in full-stack Laravel development, multi-role system design, and database management`
+}
+
+
+    };
+
+    // Get project name from URL
+    const params = new URLSearchParams(window.location.search);
+    let project = params.get('project');
+    if (project) {
+      project = decodeURIComponent(project);
+      
+      document.getElementById('project-title').textContent = project;
+      
+      // Try to find the project data with multiple matching strategies
+      let data = projectData[project];
+      if (!data) {
+        // Try case-insensitive match
+        const projectKeys = Object.keys(projectData);
+        const foundKey = projectKeys.find(key => 
+          key.toLowerCase() === project.toLowerCase()
+        );
+        if (foundKey) {
+          data = projectData[foundKey];
+        }
+      }
+      if (!data) {
+        // Try partial match
+        const projectKeys = Object.keys(projectData);
+        const foundKey = projectKeys.find(key => 
+          key.toLowerCase().includes(project.toLowerCase()) || 
+          project.toLowerCase().includes(key.toLowerCase())
+        );
+        if (foundKey) {
+          data = projectData[foundKey];
+        }
+      }
+      
+
+      if (data) {
+        document.getElementById('project-meta').innerHTML = data.meta || '';
+        document.getElementById('project-about').innerHTML = `<h3>About</h3><p>${data.about}</p>`;
+        document.getElementById('project-features').innerHTML = `<h3>Features</h3><ul>${data.features.map(f => `<li>${f}</li>`).join('')}</ul>`;
+        document.getElementById('project-stack').innerHTML = `<h3>Tech Stack</h3><p>${data.stack}</p>`;
+        // document.getElementById('project-install').innerHTML = `<h3>Installation</h3><p>${data.install}</p>`;
+        document.getElementById('project-usage').innerHTML = `<h3>Usage</h3><p>${data.usage}</p>`;
+        document.getElementById('project-performance').innerHTML = data.performance ? `<h3>Performance</h3><p>${data.performance}</p>` : '';
+        // document.getElementById('project-learned').innerHTML = `<h3>What I Learned</h3><p>${data.learned}</p>`;
+        
+        // Handle new links structure
+        let linksHTML = '';
+        if (data.links) {
+          if (typeof data.links === 'object' && !Array.isArray(data.links)) {
+            // Handle different link formats
+            Object.entries(data.links).forEach(([key, url]) => {
+              if (url) {
+                // For Game Development project, use the key as the button text
+                if (key === 'github') {
+                  linksHTML += `<a class="project-link-btn" href="${url}" target="_blank">GitHub</a>`;
+                } else if (key === 'demo') {
+                  linksHTML += `<a class="project-link-btn" href="${url}" target="_blank">Live Demo</a>`;
+                } else if (key === 'contact') {
+                  linksHTML += `<a class="project-link-btn" href="${url}" target="_blank">Contact</a>`;
+                } else if (key === 'Research Paper') {
+                  linksHTML += `<a class="project-link-btn" href="${url}" target="_blank">Research Paper</a>`;
+                } else {
+                  // For Game Development and other custom named links
+                  linksHTML += `<a class="project-link-btn" href="${url}" target="_blank">${key}</a>`;
+                }
+              }
+            });
+          } else if (Array.isArray(data.links)) {
+            // Old format with array
+            linksHTML = data.links.map(l => l.url ? `<a class="project-link-btn" href="${l.url}" target="_blank">${l.label}</a>` : '').join(' ');
+          }
+        }
+        document.getElementById('project-links').innerHTML = linksHTML;
+      } else {
+        document.getElementById('project-about').innerHTML = '<p>Project details coming soon.</p>';
+        document.getElementById('project-features').innerHTML = '';
+        document.getElementById('project-stack').innerHTML = '';
+        document.getElementById('project-install').innerHTML = '';
+        document.getElementById('project-usage').innerHTML = '';
+        document.getElementById('project-performance').innerHTML = '';
+        document.getElementById('project-learned').innerHTML = '';
+        document.getElementById('project-links').innerHTML = '';
+      }
+    }
+  </script>
+  
+  <script>
+    // Animated colorful dots background
+    (function () {
+      const canvas = document.getElementById("bg-dots-canvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      let mouse = { x: width / 2, y: height / 2 };
+      const DOTS = 60;
+      const dots = [];
+      const colors = [
+        "#7ecfff",
+        "#ffb347",
+        "#ff5eae",
+        "#7fff7e",
+        "#ffd47e",
+        "#7eafff",
+        "#ff7e7e",
+      ];
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+      }
+      window.addEventListener("resize", resize);
+      resize();
+
+      for (let i = 0; i < DOTS; i++) {
+        dots.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          r: 2 + Math.random() * 2,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5,
+        });
+      }
+
+      canvas.addEventListener("mousemove", function (e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        for (let dot of dots) {
+          // Mouse effect: dots near mouse grow and brighten
+          let dist = Math.hypot(dot.x - mouse.x, dot.y - mouse.y);
+          let maxDist = 120;
+          let grow = dist < maxDist ? 1 + (1 - dist / maxDist) * 2 : 1;
+          ctx.beginPath();
+          ctx.arc(dot.x, dot.y, dot.r * grow, 0, Math.PI * 2);
+          ctx.fillStyle = dot.color + (dist < maxDist ? "cc" : "88");
+          ctx.shadowColor = dot.color;
+          ctx.shadowBlur = dist < maxDist ? 12 : 0;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+          // Move dots
+          dot.x += dot.dx;
+          dot.y += dot.dy;
+          // Bounce off edges
+          if (dot.x < 0 || dot.x > width) dot.dx *= -1;
+          if (dot.y < 0 || dot.y > height) dot.dy *= -1;
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+  </script>
+  <script>
+    // Update back link if 'from' param is present
+    const urlParams = new URLSearchParams(window.location.search);
+    const from = urlParams.get('from');
+    if (from) {
+      const backUrl = `projects.html?scroll=${encodeURIComponent(from)}`;
+      document.getElementById('back-to-portfolio').href = backUrl;
+      document.getElementById('back-to-portfolio').onclick = function() {
+        window.location.href = backUrl;
+        return false;
+      };
+    }
+  </script>
+</body>
+</html> 
