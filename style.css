@@ -784,6 +784,18 @@ html {
   margin-right: auto;
 }
 
+.connect-subtitle {
+  text-align: center;
+  color: #bbb;
+  font-size: 1rem;
+  margin-bottom: 2.5em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -885,6 +897,22 @@ html {
   color: #aaa;
   font-size: 0.9rem;
   margin: 0;
+  margin-bottom: 1em;
+  line-height: 1.5;
+}
+
+.contact-action {
+  color: #7ecfff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 0.5em;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.contact-card:hover .contact-action {
+  opacity: 1;
+  transform: translateX(5px);
 }
 
 /* Contact Form Styles */
