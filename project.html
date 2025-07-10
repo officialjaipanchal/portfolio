@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Details</title>
-  <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="style.css?v=4">
   <style>
     .project-detail-container {
       max-width: 800px;
@@ -53,15 +53,15 @@
       letter-spacing: 0.2px;
     }
     .project-detail-links a {
-      color: #7ecfff;
+      color: #000000;
       font-weight: 500;
       margin-right: 1.5em;
       text-decoration: none;
       transition: color 0.18s;
     }
     .project-detail-links a:hover {
-      color: #fff;
-      text-decoration: underline;
+      color: #111010;
+      text-decoration: none;
     }
     .project-detail-meta {
       color: #aaa;
@@ -135,15 +135,60 @@
       transform: translateY(0);
       box-shadow: 0 2px 8px rgba(126,207,255,0.2);
     }
+    .back-button-container {
+      margin-bottom: 1.5em;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      color: #7ecfff;
+      font-size: 1.1em;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 0.8em 1.2em;
+      border-radius: 8px;
+      background: rgba(126, 207, 255, 0.1);
+      border: 1px solid rgba(126, 207, 255, 0.2);
+      transition: all 0.3s ease;
+      margin-bottom: 1em;
+    }
+    .back-button:hover {
+      background: rgba(126, 207, 255, 0.15);
+      border-color: rgba(126, 207, 255, 0.4);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(126, 207, 255, 0.2);
+    }
+    .back-button:active {
+      transform: translateY(0);
+    }
+    @media (max-width: 700px) {
+      .back-button-container {
+        margin-bottom: 1em;
+      }
+      .back-button {
+        font-size: 1em;
+        padding: 0.6em 1em;
+      }
+    }
   </style>
 </head>
 <body>
   <canvas id="bg-dots-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></canvas>
-  <nav style="text-align:center; margin-top:2em;">
-    <a id="back-to-portfolio" href="projects.html" style="color:#7ecfff; font-size:1.1em; text-decoration:none;">&larr; Back to Portfolio</a>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
   <div class="project-detail-container">
+    
     <div class="project-detail-title" id="project-title">Project Title</div>
+    
     <div class="project-detail-meta" id="project-meta"></div>
     <div class="project-detail-section" id="project-about"></div>
     <div class="project-detail-section" id="project-features"></div>
@@ -153,6 +198,9 @@
     <div class="project-detail-section" id="project-performance"></div>
     <div class="project-detail-section" id="project-learned"></div>
     <div class="project-detail-section project-detail-links" id="project-links"></div>
+    <div class="back-button-container">
+      <a href="projects.html" class="back-button">&larr; Back to Projects</a>
+    </div>
   </div>
   <script>
     const projectData = {
