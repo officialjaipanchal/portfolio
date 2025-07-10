@@ -1,0 +1,109 @@
+@import "../_globalColor";
+
+body {
+  background-color: white;
+}
+
+.dark-mode {
+  background-color: $darkBackground;
+  color: white;
+  transition: "0.1s";
+}
+
+.main {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+  position: relative;
+  background-color: white;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+  }
+}
+
+.dark-mode .main {
+  background-color: $darkBackground;
+}
+
+.dark-mode .main::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+#skills {
+  position: relative;
+  padding-top: 4rem;
+  margin-top: 2rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+  }
+}
+
+.dark-mode #skills::before,
+.dark-mode #skills::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+#education,
+#experience {
+  position: relative;
+  padding-top: 4rem;
+  margin-top: 2rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+  }
+}
+
+.dark-mode #education::before,
+.dark-mode #experience::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+  .main {
+    width: 95%;
+    margin-top: 20px;
+  }
+  
+  #skills,
+  #education,
+  #experience {
+    padding-top: 3rem;
+    margin-top: 1.5rem;
+  }
+  
+  #skills::after {
+    bottom: -1.5rem;
+  }
+}

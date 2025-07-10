@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Jaykumar Suthar - Portfolio
 
 A responsive personal portfolio website showcasing projects, skills, and experience.
@@ -79,3 +80,6 @@ Portfolio/
 3. Navigate through the portfolio sections
 
 No build process or dependencies required - pure HTML, CSS, and JavaScript. 
+=======
+JayKumar Suthar
+>>>>>>> main-html
