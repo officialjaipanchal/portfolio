@@ -24,13 +24,70 @@
     .project-detail-title {
       font-size: clamp(1.8rem, 5vw, 2.5rem);
       font-weight: 800;
-      margin-bottom: 0.8em;
+      margin-bottom: 1em;
       font-family: 'Space Grotesk', sans-serif;
       background: linear-gradient(135deg, #7ecfff 0%, #3a8dde 50%, #9d4edd 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       letter-spacing: -0.02em;
+    }
+    .project-detail-image-container {
+      width: 100%;
+      margin-bottom: 2em;
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(24, 24, 24, 0.9) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .project-detail-image-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(126, 207, 255, 0.05) 0%, rgba(58, 141, 222, 0.05) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .project-detail-image-container:hover::before {
+      opacity: 1;
+    }
+    .project-detail-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 16px;
+      transition: transform 0.3s ease;
+    }
+    .project-detail-image-container:hover .project-detail-image {
+      transform: scale(1.02);
+    }
+    .project-detail-image-placeholder {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 1rem;
+      text-align: center;
+      padding: 2em;
+      flex-direction: column;
+      gap: 1em;
+    }
+    .project-detail-image-placeholder-icon {
+      font-size: 3rem;
+      opacity: 0.5;
     }
     .project-detail-section {
       margin-bottom: 2.5em;
@@ -94,6 +151,20 @@
       border: 1px solid rgba(126, 207, 255, 0.3);
       backdrop-filter: blur(10px);
     }
+    .project-detail-badge-link {
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+    .project-detail-badge-link:hover {
+      background: linear-gradient(135deg, rgba(126, 207, 255, 0.3) 0%, rgba(58, 141, 222, 0.3) 100%);
+      border-color: rgba(126, 207, 255, 0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(126, 207, 255, 0.3);
+      color: #fff;
+    }
     @media (max-width: 700px) {
       .project-detail-container {
         padding: 1.5em 1em 1.2em 1em;
@@ -101,6 +172,17 @@
       }
       .project-detail-title {
         font-size: 1.4rem;
+      }
+      .project-detail-image-container {
+        margin-bottom: 1.5em;
+        min-height: 150px;
+      }
+      .project-detail-image-placeholder {
+        height: 200px;
+        padding: 1.5em;
+      }
+      .project-detail-image-placeholder-icon {
+        font-size: 2rem;
       }
       .project-detail-section h3 {
         font-size: 1.2rem;
@@ -183,6 +265,9 @@
   </style>
   <div class="project-detail-container">
     <div class="project-detail-title" id="project-title">Project Title</div>
+    <div class="project-detail-image-container" id="project-image-container">
+      <img id="project-image" src="" alt="Project Image" class="project-detail-image" style="display: none;">
+    </div>
     <div class="project-detail-meta" id="project-meta"></div>
     <div class="project-detail-section" id="project-about"></div>
     <div class="project-detail-section" id="project-features"></div>
@@ -196,9 +281,13 @@
   <script>
     const projectData = {
       "Dream Catcher": {
+  image: "Images/Dream Catcher.png",
   meta: `
     <span class='project-detail-badge'>July 2025</span> 
     <span class='project-detail-badge'>React, React Native, Node.js, Express.js, MongoDB, Expo</span>
+    <a href="https://github.com/officialjaipanchal/Dream-Catcher" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
   `,
   about: `
     <b>Dream Catcher</b> is a comprehensive dream journaling platform that enables users to capture, organize, and analyze their dreams through multiple media formats including text, audio, and video recordings.<br><br>
@@ -226,15 +315,16 @@
   `,
   usage: `Perfect for dream researchers, psychology enthusiasts, and anyone wanting to track their subconscious patterns. Enables comprehensive dream analysis and personal growth through detailed documentation.`,
   performance: `Optimized media handling with efficient file uploads, real-time recording capabilities, and responsive design across all devices. MongoDB aggregation for fast statistics and analytics.`,
-  learned: `Built a complete full-stack application spanning web and mobile platforms. Mastered cross-platform development, media handling, secure authentication, and data visualization. Learned to create intuitive user experiences for personal data management with comprehensive analytics.`,
-  links: {
-    github: "https://github.com/officialjaipanchal/Dream-Catcher"
-  }
+  learned: `Built a complete full-stack application spanning web and mobile platforms. Mastered cross-platform development, media handling, secure authentication, and data visualization. Learned to create intuitive user experiences for personal data management with comprehensive analytics.`
 },
       "ColorSense AI": {
+        image: "Images/Color Sense AI.png",
         meta: `
           <span class='project-detail-badge'>May 2025</span> 
           <span class='project-detail-badge'>React.js, Express.js, MongoDB, Gemini AI</span>
+          <a href="https://github.com/officialjaipanchal/ColorSenseAI" target="_blank" class='project-detail-badge project-detail-badge-link'>
+            GitHub
+          </a>
         `,
         about: `
           <b>ColorSense AI</b> is an AI-powered color consultation platform that helps users explore, compare, and receive intelligent color recommendations in a beautiful, intuitive interface.<br><br>
@@ -254,15 +344,16 @@
         `,
         usage: `Web-based app with interactive UI and smart color design features`,
         performance: `Optimized for responsive performance, still improving based on user feedback`,
-        learned: `Learned to design intelligent, AI-integrated UIs with a clean UX and scalable backend architecture`,
-        links: {
-          github: "https://github.com/officialjaipanchal/ColorSenseAI"
-        }
+        learned: `Learned to design intelligent, AI-integrated UIs with a clean UX and scalable backend architecture`
       },
       "LinkedIn Job Tracker": {
+  image: "Images/LinkedIn Job Tracker.png",
   meta: `
     <span class='project-detail-badge'>May 2025</span> 
     <span class='project-detail-badge'>Node.js, Express.js, Puppeteer, MongoDB</span>
+    <a href="https://github.com/officialjaipanchal/LinkedIn_JobTracker" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
   `,
   about: `
     <b>LinkedIn Job Tracker</b> is an automation-driven backend system that scrapes job listings from LinkedIn, classifies them intelligently, and stores structured data in a MongoDB database for easy filtering and job tracking.<br><br>
@@ -282,15 +373,16 @@
   `,
   usage: `Backend automation system to fetch, classify, and track LinkedIn job listings`,
   performance: `Efficient, scalable scraping logic with support for job tracking and skill-based classification`,
-  learned: `Learned how to build intelligent scrapers, structure large-scale job data, and apply classification logic using basic NLP techniques`,
-  links: {
-    github: "https://github.com/officialjaipanchal/LinkedIn_JobTracker"
-  }
+  learned: `Learned how to build intelligent scrapers, structure large-scale job data, and apply classification logic using basic NLP techniques`
 },
       "ComicSonic": {
+  image: "Images/Comic Sonic.png",
   meta: `
     <span class='project-detail-badge'>Apr 2025</span> 
     <span class='project-detail-badge'>Next.js, Python, Gemini API, Google Text-to-Speech</span>
+    <a href="https://github.com/officialjaipanchal/ComicSonic" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
   `,
   about: `
     <b>ComicSonic</b> is an AI-powered platform that transforms Comic Book PDFs into immersive, natural-sounding audio narrations.<br><br>
@@ -310,15 +402,16 @@
   `,
   usage: `Hackathon project aimed at enhancing accessibility for comic readers by enabling audio narration of visual content`,
   performance: `Fast and accurate text extraction with seamless user flow for uploads and playback`,
-  learned: `Gained experience designing accessible UIs and collaborating in a full-stack hackathon setting to solve real-world problems with AI`,
-  links: {
-    github: "https://github.com/officialjaipanchal/ComicSonic"
-  }
+  learned: `Gained experience designing accessible UIs and collaborating in a full-stack hackathon setting to solve real-world problems with AI`
 },
       "PennyShare": {
+  image: "Images/PennyShare.png",
   meta: `
     <span class='project-detail-badge'>Jan 2025 - Apr 2025</span> 
     <span class='project-detail-badge'>Node.js, Express.js, MongoDB, OpenAI GPT-3.5</span>
+    <a href="https://github.com/officialjaipanchal/PennyShare" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
   `,
   about: `
     <b>PennyShare</b> is an intelligent group expense management system that helps users track shared and individual expenses, interact with an AI-powered financial assistant, and gain personalized financial insights.<br><br>
@@ -340,16 +433,17 @@
   `,
   usage: `Ideal for roommates, trip planners, and group finance management. Enables natural conversations with financial assistants.`,
   performance: `Efficient query resolution using MongoDB aggregation and AI prompt engineering`,
-  learned: `Built a secure, full-stack financial system combining REST APIs, NLP, and smart data modeling. Learned how to design AI-first applications with real-world use cases.`,
-  links: {
-    github: "https://github.com/officialjaipanchal/PennyShare"
-  }
+  learned: `Built a secure, full-stack financial system combining REST APIs, NLP, and smart data modeling. Learned how to design AI-first applications with real-world use cases.`
 },  
 
      "Student Attendance System": {
+  image: "Images/Student Attendance.png",
   meta: `
     <span class='project-detail-badge'>Jan 2025 - Feb 2025</span> 
     <span class='project-detail-badge'>React.js, Node.js, Express.js, SQLite</span>
+    <a href="https://github.com/officialjaipanchal/Student-Attendance-System" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
   `,
   about: `
     <b>Student Attendance System with Proxy Prevention</b> is a secure, offline-first platform built to tackle proxy attendance issues in classrooms. It combines IP-based fraud detection, real-time logging, and user-friendly UI to ensure authentic and reliable attendance tracking.<br><br>
@@ -370,16 +464,17 @@
   `,
   usage: `Ideal for universities or classrooms that need secure, offline-compatible attendance tracking with anti-proxy measures.`,
   performance: `Lightweight and fast on local networks, with minimal setup and strong reliability even without internet access`,
-  learned: `Learned to design a secure, performant, and offline-first full-stack system. Gained hands-on experience in local network compatibility, fraud prevention, and real-time logging.`,
-  links: {
-    github: "https://github.com/officialjaipanchal/Student-Attendance-System"
-  }
+  learned: `Learned to design a secure, performant, and offline-first full-stack system. Gained hands-on experience in local network compatibility, fraud prevention, and real-time logging.`
 },
 
      "Location Tracker": {
+  image: "Images/Location Tracker.png",
   meta: `
     <span class='project-detail-badge'>Nov 2024 - Dec 2024</span> 
     <span class='project-detail-badge'>Android, Java/Kotlin, Google Maps API, SQLite</span>
+    <a href="https://github.com/officialjaipanchal/Location-Tracker" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
   `,
   about: `
     <b>Location Tracker</b> is a real-time GPS-based Android application that captures, stores, and visualizes user travel history through heatmaps and interactive maps.<br><br>
@@ -399,12 +494,10 @@
   `,
   usage: `Ideal for travelers, delivery tracking, or personal route analysis. Offers both live tracking and historical review via heatmap.`,
   performance: `Efficient location polling with minimal battery drain and offline access to all stored data`,
-  learned: `Gained experience in Android location services, map-based UI design, GPS data handling, and spatial visualization techniques`,
-  links: {
-    github: "https://github.com/officialjaipanchal/Location-Tracker"
-  }
+  learned: `Gained experience in Android location services, map-based UI design, GPS data handling, and spatial visualization techniques`
 },
 "Library Management System": {
+  image: "Images/Library Management.png",
   meta: `
     <span class='project-detail-badge'>Sep 2024 - Oct 2024</span> 
     <span class='project-detail-badge'>React.js, Node.js, Express.js, MongoDB</span>
@@ -431,9 +524,13 @@
 },
 
      "Gaming Database in SQL": {
+  image: "Images/Gamming Database.PNG",
   meta: `
     <span class='project-detail-badge'>Feb 2024 - Mar 2024</span> 
     <span class='project-detail-badge'>T-SQL, Azure SQL Edge, Triggers, UDFs, Stored Procedures</span>
+    <a href="https://github.com/officialjaipanchal/Gamming-Database" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
   `,
   about: `
     <b>Gaming Database in SQL</b> is a fully designed and implemented relational database system that simulates a gaming platform's backend — complete with player tracking, achievements, transactions, and game analytics.<br><br>
@@ -454,15 +551,16 @@
   `,
   usage: `Simulates real-world backend database systems for gaming platforms and data-intensive applications`,
   performance: `Highly optimized relational design with support for advanced analytics and reporting queries`,
-  learned: `Deepened my knowledge of database relationships, real-time auditing, referential integrity, and backend logic with advanced SQL features`,
-  links: {
-    github: "https://github.com/officialjaipanchal/Gamming-Database"
-  }
+  learned: `Deepened my knowledge of database relationships, real-time auditing, referential integrity, and backend logic with advanced SQL features`
 },
     "Secure Web Application Architecture": {
+  image: "Images/Secure Aws.png",
   meta: `
     <span class='project-detail-badge'>Aug 2023 - Nov 2023</span> 
     <span class='project-detail-badge'>AWS (EC2, VPC, IAM, KMS, ELB, CloudTrail)</span>
+    <a href="https://github.com/officialjaipanchal/secure-web-application-architecture" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
   `,
   about: `
     <b>Secure Web Application Architecture</b> is a cloud-native infrastructure project where I designed and deployed a scalable, secure, and highly available web architecture on AWS.<br><br>
@@ -483,13 +581,11 @@
   `,
   usage: `Designed as a secure blueprint for web app deployments with compliance and zero-trust principles in mind`,
   performance: `Optimized for availability, threat detection, and secure data flow across services`,
-  learned: `Learned to build secure cloud environments using AWS services, enforced compliance standards, and managed incident response and monitoring`,
-  links: {
-    github: "https://github.com/officialjaipanchal/secure-web-application-architecture"
-  }
+  learned: `Learned to build secure cloud environments using AWS services, enforced compliance standards, and managed incident response and monitoring`
 },
 
       "Game Development": {
+  image: "Images/Game Development.png",
   meta: `
     <span class='project-detail-badge'>Jan 2022 - Jan 2023</span> 
     <span class='project-detail-badge'>Unity, Firebase, Google AdMob, Game Design</span>
@@ -551,9 +647,13 @@
   }
 },
 "Digital Image Processing": {
+  image: "Images/Digital-Image-Processing.png",
   meta: `
     <span class='project-detail-badge'>Mar 2021 - May 2021</span> 
     <span class='project-detail-badge'>Python, OpenCV, Matplotlib, NumPy</span>
+    <a href="https://github.com/officialjaipanchal/Digital-Image-Processing" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
   `,
   about: `
     <b>Digital Image Processing</b> is a collection of interactive experiments showcasing fundamental image arithmetic and bitwise operations using Python and OpenCV.<br><br>
@@ -574,15 +674,16 @@
   `,
   usage: `Designed for experimenting and visualizing core image processing techniques with real-time outputs`,
   performance: `Efficient pixel-level operations with immediate visualization of results`,
-  learned: `Gained foundational skills in image matrix manipulation, Boolean logic on images, and data visualization techniques`,
-  links: {
-    github: "https://github.com/officialjaipanchal/Digital-Image-Processing"
-  }
+  learned: `Gained foundational skills in image matrix manipulation, Boolean logic on images, and data visualization techniques`
 },
 "Dog Adoption App": {
+  image: "Images/Dog Adoption.png",
   meta: `
     <span class='project-detail-badge'>Feb 2021</span> 
     <span class='project-detail-badge'>Kotlin, Jetpack Compose, Android Architecture Components</span>
+    <a href="https://github.com/officialjaipanchal/DogAdoption" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
   `,
   about: `
     <b>Dog Adoption App</b> is a beautifully designed Android app showcasing the power and flexibility of Jetpack Compose for modern UI development.<br><br>
@@ -600,15 +701,13 @@
   `,
   usage: `Designed for responsive, scalable mobile user experiences focused on adoption browsing`,
   performance: `Lightweight, fast UI rendering using declarative Android framework`,
-  learned: `Gained hands-on experience with Jetpack Compose and modern Android development best practices`,
-  links: {
-    github: "https://github.com/officialjaipanchal/DogAdoption"
-  }
+  learned: `Gained hands-on experience with Jetpack Compose and modern Android development best practices`
 },
 "E-commerce Website": {
   meta: `
     <span class='project-detail-badge'>Jun 2020 - Jul 2020</span> 
     <span class='project-detail-badge'>Laravel, PHP, PHPMyAdmin, MySQL</span>
+    
   `,
   about: `
     <b>E-commerce Website</b> built using Laravel offers a comprehensive online shopping experience with robust admin management.<br><br>
@@ -627,10 +726,7 @@
   `,
   usage: `Responsive web platform designed for user-friendly online shopping and backend administration`,
   performance: `Optimized for quick load times and smooth user interaction across devices`,
-  learned: `Gained experience in PHP web development, relational database design, and admin panel implementation`,
-  links: {
-    github: "https://github.com/officialjaipanchal/E-commerce-Website"
-  }
+  learned: `Gained experience in PHP web development, relational database design, and admin panel implementation`
 },
 "NE Cleaning": {
   meta: `
@@ -654,6 +750,73 @@
   usage: `Designed to provide seamless interaction between users requesting services, workers fulfilling tasks, and admins managing operations`,
   performance: `Robust backend ensuring secure and responsive request handling across all modules`,
   learned: `Gained expertise in full-stack Laravel development, multi-role system design, and database management`
+},
+"Type Flow": {
+  image: "Images/TypeFlow.png",
+  meta: `
+    <span class='project-detail-badge'>Dec 2024</span> 
+    <span class='project-detail-badge'>React, TypeScript, Redux, Sass/SCSS</span>
+    <a href="https://github.com/officialjaipanchal/Type-Flow" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
+  `,
+  about: `
+    <b>Type Flow</b> is a modern, feature-rich typing speed test application built with React and TypeScript. It provides users with an intuitive interface to test and improve their typing speed and accuracy.<br><br>
+    The application offers multiple word lists, customizable time limits, beautiful themes, and detailed statistics to help users track their progress over time.<br><br>
+    <i>This project enhanced my skills in React state management, TypeScript type safety, and creating smooth, responsive user interfaces with real-time calculations.</i>
+  `,
+  features: [
+    "Real-time typing speed calculation (WPM and accuracy)",
+    "Multiple beautiful themes for personalized experience",
+    "Various word lists: words, sentences, numbers, Game of Thrones quotes, JavaScript/Python code snippets",
+    "Customizable time limits: 15s, 30s, 45s, 60s, 120s",
+    "Keyboard shortcuts for quick navigation (Ctrl+K for command palette, Tab to restart)",
+    "Detailed test results and statistics tracking",
+    "Smooth, responsive UI with real-time feedback",
+    "Redux for efficient state management"
+  ],
+  stack: `
+    <b>Frontend:</b> React, TypeScript, Redux<br>
+    <b>Styling:</b> Sass/SCSS<br>
+    <b>Build Tool:</b> React Scripts<br>
+    <b>Features:</b> Real-time calculations, keyboard shortcuts, theme system
+  `,
+  usage: `Perfect for developers, writers, and anyone looking to improve their typing speed and accuracy. Great for daily practice and skill development.`,
+  performance: `Optimized for smooth real-time calculations with minimal lag. Responsive design works seamlessly across all devices and screen sizes.`,
+  learned: `Mastered React with TypeScript, Redux state management, and creating interactive UIs with real-time feedback. Learned to implement keyboard shortcuts, theme systems, and complex state calculations efficiently.`
+},
+"GlobalVideotech": {
+  image: "Images/Global Video Tech.png",
+  meta: `
+    <span class='project-detail-badge'>2020 - 2021</span> 
+    <span class='project-detail-badge'>HTML5, CSS3, SCSS, Bootstrap 4, jQuery, PHP, Gulp</span>
+    <a href="https://github.com/officialjaipanchal/GlobalVideotech" target="_blank" class='project-detail-badge project-detail-badge-link'>
+      GitHub
+    </a>
+  `,
+  about: `
+    <b>GlobalVideotech</b> is a professional portfolio website for a wedding photography and videography company based in Mehsana, Gujarat, India.<br><br>
+    The website showcases their work and provides a platform for clients to get in touch. It features a responsive design, portfolio showcase with modal popups, and an integrated contact form for client inquiries.<br><br>
+    <i>This project enhanced my skills in building professional portfolio websites with modern UI/UX, responsive design, and client-focused features.</i>
+  `,
+  features: [
+    "Fully responsive layout that works on all devices",
+    "Portfolio showcase with modal popups for recent work",
+    "Integrated contact form for client inquiries",
+    "Smooth scrolling navigation between sections",
+    "Clean and professional design using Bootstrap 4",
+    "Social media integration with links to profiles",
+    "Modern UI with clean aesthetics and user-friendly interface"
+  ],
+  stack: `
+    <b>Frontend:</b> HTML5, CSS3, SCSS, Bootstrap 4.3.1, jQuery 3.4.1<br>
+    <b>Icons:</b> Font Awesome 5.10.2<br>
+    <b>Backend:</b> PHP (contact form handler)<br>
+    <b>Build Tools:</b> Gulp 4.0.2, http-server (development)
+  `,
+  usage: `Professional portfolio website for wedding photography and videography services. Clients can browse the portfolio, view work samples, and contact the company through the integrated form.`,
+  performance: `Optimized for fast load times with pre-compiled CSS files. Responsive design ensures smooth experience across desktop, tablet, and mobile devices.`,
+  learned: `Gained experience in building professional portfolio websites, implementing responsive design patterns, working with Bootstrap framework, and creating user-friendly contact forms. Learned to structure projects with build tools like Gulp and manage SCSS compilation workflows.`
 }
 
 
@@ -693,6 +856,20 @@
       
 
       if (data) {
+        // Handle project image
+        const imageContainer = document.getElementById('project-image-container');
+        const projectImage = document.getElementById('project-image');
+        if (data.image) {
+          projectImage.src = data.image;
+          projectImage.alt = `${project} - Project Image`;
+          projectImage.style.display = 'block';
+          imageContainer.style.minHeight = 'auto';
+          imageContainer.style.display = 'block';
+        } else {
+          // Hide container if no image
+          imageContainer.style.display = 'none';
+        }
+        
         document.getElementById('project-meta').innerHTML = data.meta || '';
         document.getElementById('project-about').innerHTML = `<h3>About</h3><p>${data.about}</p>`;
         document.getElementById('project-features').innerHTML = `<h3>Features</h3><ul>${data.features.map(f => `<li>${f}</li>`).join('')}</ul>`;

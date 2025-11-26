@@ -382,7 +382,7 @@ section h2 {
 .project-card {
   background: linear-gradient(135deg, rgba(24, 24, 24, 0.9) 0%, rgba(18, 18, 18, 0.95) 100%);
   border-radius: 20px;
-  padding: 2.5em 2em 2em 2em;
+  padding: 2.2em 2em 2em 2em;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -415,6 +415,61 @@ section h2 {
 
 .project-card:hover::before {
   transform: scaleX(1);
+}
+.project-media {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1.4em;
+  background: radial-gradient(circle at 0% 0%, #7ecfff33, transparent 55%),
+              radial-gradient(circle at 100% 100%, #9d4edd33, transparent 55%),
+              radial-gradient(circle at 0% 100%, #3a8dde33, transparent 55%),
+              #101010;
+  min-height: 0;
+  padding-bottom: 52%;
+}
+
+.project-image-avatar {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 2.2rem;
+}
+
+.project-image-avatar span {
+  padding: 0.4em 0.9em;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: radial-gradient(circle at 0 0, rgba(10,10,10,0.1), rgba(10,10,10,0.8));
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.project-card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-card-image {
+  transform: scale(1.05);
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 .project-title {
   font-size: 1.5rem;
